@@ -8,7 +8,7 @@ class Home extends React.Component {
       <div className="Home">
         <div className="Home-header">
           <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to azasdasdzle</h2>
+          <h2>Welcome to test</h2>
         </div>
         <p className="Home-intro">
           To get started, edit <code>src/App.js</code> or{' '}

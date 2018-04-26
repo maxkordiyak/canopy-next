@@ -3,14 +3,18 @@
   "version": "2.0.0-alpha.8",
   "license": "MIT",
   "scripts": {
-    "start": "razzle start",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "razzle start",
+    "start": "npm-run-all -p watch-css start-js",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "production": "npm-run-all build start:prod"
+    "production": "npm-run-all build start:prod build-css"
   },
   "dependencies": {
     "express": "^4.16.3",
+    "node-sass-chokidar": "^1.2.2",
     "razzle": "^2.0.0-alpha.12",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
