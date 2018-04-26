@@ -1,8 +1,10 @@
 import App from './App';
 import React from 'react';
+import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
+import configureStore from "./store/configureStore";
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -12,10 +14,13 @@ server
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
     const context = {};
+    const store = configureStore({});
     const markup = renderToString(
-      <StaticRouter context={context} location={req.url}>
-        <App />
-      </StaticRouter>
+        <Provider store={store}>
+          <StaticRouter context={context} location={req.url}>
+            <App />
+          </StaticRouter>
+        </Provider>
     );
 
     if (context.url) {
