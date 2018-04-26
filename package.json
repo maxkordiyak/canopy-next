@@ -13,7 +13,6 @@
     "production": "npm-run-all build start:prod build-css"
   },
   "dependencies": {
-    "@material-ui/icons": "^1.0.0-beta.43",
     "express": "^4.16.3",
     "material-ui": "^1.0.0-beta.43",
     "node-sass-chokidar": "^1.2.2",
@@ -26,6 +25,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@material-ui/icons": "^1.0.0-beta.43",
     "npm-run-all": "^4.1.2"
   }
 }

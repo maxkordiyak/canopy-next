@@ -1,4 +1,4 @@
-import App from './App';
+import App from './containers/App';
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
@@ -29,6 +29,7 @@ server
         <meta charset="utf-8" />
         <title>Welcome to Razzle</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         ${assets.client.css
           ? `<link rel="stylesheet" href="${assets.client.css}">`
           : ''}
