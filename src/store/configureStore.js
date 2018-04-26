@@ -3,14 +3,26 @@ import {
     compose,
     applyMiddleware,
 } from 'redux';
-
-import ReduxThunk from 'redux-thunk';
-
+import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-const createStoreWithMiddleware = compose(applyMiddleware(ReduxThunk))(createStore);
-
+/**
+ * The method is main for configuration redux store
+ * if process.env.NODE_ENV !== 'production' we don't run Redux Dev Tools Extension
+ * @param initialState
+ * @returns {Store<any> & {dispatch: any}}
+ */
 export default function configureStore(initialState = {}) {
-    // return createStoreWithMiddleware(rootReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-    return createStoreWithMiddleware(rootReducer, initialState);
+    return createStore(
+        rootReducer,
+        initialState,
+        compose(
+            applyMiddleware(thunk),
+            (
+                process.env.NODE_ENV !== 'production' &&
+                typeof window !== 'undefined' &&
+                window.__REDUX_DEVTOOLS_EXTENSION__) ?
+                    window.__REDUX_DEVTOOLS_EXTENSION__() :
+                    f => f
+        ));
 };
