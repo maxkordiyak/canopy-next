@@ -17,6 +17,7 @@ module.exports = {
   ],
   'rules': {
 		"comma-dangle": ["error", "never"],
+		"indent": ["error", 2],
     'indent': [
       'error',
       'tab',
