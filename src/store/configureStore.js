@@ -1,6 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
+import history from './history';
+import { routerMiddleware } from 'react-router-redux';
+
+const middleware = routerMiddleware(history);
 
 /**
  * The method is main for configuration redux store
@@ -14,6 +18,7 @@ export default function configureStore(initialState = {}) {
 		initialState,
 		compose(
 			applyMiddleware(thunk),
+			applyMiddleware(middleware),
 			(
 				process.env.NODE_ENV !== 'production' &&
 				typeof window !== 'undefined' &&

@@ -1,11 +1,15 @@
 import React from 'react';
-import './index.css';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+import { withRouter } from 'react-router-dom';
 import AppToolbar from '../../components/AppToolbar';
-//import Sidebar from '../../components/Sidebar1';
 import Sidebar from '../../components/Sidebar';
 import Typography from 'material-ui/Typography';
+import { setMessage } from '../../actions/app';
+
+import './index.css';
 
 const styles = theme => ({
 	root: {
@@ -39,21 +43,25 @@ const styles = theme => ({
 	}
 });
 
-class Home extends React.Component {
+class HomeContainer extends React.Component {
 	state = {
 		sidebarOpen: false,
 		menuOpen: false,
 		anchor: 'left',
 		anchorEl: null
 	};
-	
+
 	handleMenu = event => {
 		this.setState({
 			anchorEl: event.currentTarget,
 			menuOpen: !this.state.menuOpen
 		});
 	};
-	
+
+	componentDidMount() {
+		console.log(this.props)
+	}
+
 	handleSidebar = event => {
 		this.setState({
 			anchorEl: event.currentTarget,
@@ -87,9 +95,22 @@ class Home extends React.Component {
 	}
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        setMessage:() => dispatch(setMessage())
+    }
+};
 
-Home.propTypes = {
+const mapStateToProps = (state) => ({
+	state: state
+});
+
+HomeContainer.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Home);
+export default compose(
+    withStyles(styles),
+	withRouter,
+	connect(mapStateToProps, mapDispatchToProps)
+)(HomeContainer);
