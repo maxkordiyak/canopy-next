@@ -59,7 +59,7 @@ class HomeContainer extends React.Component {
 	};
 
 	componentDidMount() {
-		console.log(this.props)
+		console.log(this.props);
 	}
 
 	handleSidebar = event => {
@@ -76,11 +76,11 @@ class HomeContainer extends React.Component {
 			<div className={classes.root}>
 				<div className={classes.appFrame}>
 					<AppToolbar anchor={anchor}
-											anchorEl={anchorEl}
-											menuOpen={menuOpen}
-											sidebarOpen={sidebarOpen}
-											handleSidebar={this.handleSidebar}
-											handleMenu={this.handleMenu}
+						anchorEl={anchorEl}
+						menuOpen={menuOpen}
+						sidebarOpen={sidebarOpen}
+						handleSidebar={this.handleSidebar}
+						handleMenu={this.handleMenu}
 					/>
 					<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
 					{/*MAIN CONTENT HERE*/}
@@ -96,9 +96,9 @@ class HomeContainer extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-        setMessage:() => dispatch(setMessage())
-    }
+	return {
+		setMessage:() => dispatch(setMessage())
+	};
 };
 
 const mapStateToProps = (state) => ({
@@ -110,7 +110,7 @@ HomeContainer.propTypes = {
 };
 
 export default compose(
-    withStyles(styles),
+	withStyles(styles),
 	withRouter,
 	connect(mapStateToProps, mapDispatchToProps)
 )(HomeContainer);
