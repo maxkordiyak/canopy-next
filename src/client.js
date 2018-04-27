@@ -12,7 +12,7 @@ const store = configureStore(preloadedState || {});
 hydrate(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App/>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root'),
