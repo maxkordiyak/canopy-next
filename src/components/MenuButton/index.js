@@ -30,7 +30,6 @@ class MenuButton extends React.Component {
 					aria-owns={open ? 'menu-appbar' : null}
 					aria-haspopup="true"
 					onClick={this.handleMenu}
-					color="contrast"
 				>
 					{type ? <img src={Wrapper} alt=""/> : <Wrapper/>}
 				</IconButton>

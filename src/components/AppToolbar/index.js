@@ -100,6 +100,7 @@ class AppToolbar extends React.Component {
 						[classes[`appBarShift-${anchor}`]]: sidebarOpen
 					})}
 				>
+					
 					<Toolbar>
 						<IconButton
 							color="inherit"
