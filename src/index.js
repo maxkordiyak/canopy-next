@@ -9,13 +9,13 @@ server.listen(process.env.PORT || 3002, (error) => {
 	if (error) {
 		console.log(error);
 	}
-
+	
 	console.log('🚀 started');
 });
 
 if (module.hot) {
 	console.log('✅  Server-side HMR Enabled!');
-
+	
 	module.hot.accept('./server', () => {
 		console.log('🔁  HMR Reloading `./server`...');
 		server.removeListener('request', currentApp);

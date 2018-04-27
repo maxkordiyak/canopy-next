@@ -13,27 +13,27 @@ export const mailFolderListItems = (
 	<div>
 		<ListItem button>
 			<ListItemIcon>
-				<InboxIcon />
+				<InboxIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Inbox" />
+			<ListItemText primary="Inbox"/>
 		</ListItem>
 		<ListItem button>
 			<ListItemIcon>
-				<StarIcon />
+				<StarIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Starred" />
+			<ListItemText primary="Starred"/>
 		</ListItem>
 		<ListItem button>
 			<ListItemIcon>
-				<SendIcon />
+				<SendIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Send mail" />
+			<ListItemText primary="Send mail"/>
 		</ListItem>
 		<ListItem button>
 			<ListItemIcon>
-				<DraftsIcon />
+				<DraftsIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Drafts" />
+			<ListItemText primary="Drafts"/>
 		</ListItem>
 	</div>
 );
@@ -42,21 +42,21 @@ export const otherMailFolderListItems = (
 	<div>
 		<ListItem button>
 			<ListItemIcon>
-				<MailIcon />
+				<MailIcon/>
 			</ListItemIcon>
-			<ListItemText primary="All mail" />
+			<ListItemText primary="All mail"/>
 		</ListItem>
 		<ListItem button>
 			<ListItemIcon>
-				<DeleteIcon />
+				<DeleteIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Trash" />
+			<ListItemText primary="Trash"/>
 		</ListItem>
 		<ListItem button>
 			<ListItemIcon>
-				<ReportIcon />
+				<ReportIcon/>
 			</ListItemIcon>
-			<ListItemText primary="Spam" />
+			<ListItemText primary="Spam"/>
 		</ListItem>
 	</div>
 );

@@ -6,12 +6,12 @@ const initialState = {
 
 export const app = (state = initialState, action) => {
 	switch (action.type) {
-	case SET_MESSAGE:
-		return {
-			...state,
-			message: action.message
-		};
-	default:
-		return state;
+		case SET_MESSAGE:
+			return {
+				...state,
+				message: action.message
+			};
+		default:
+			return state;
 	}
 };

@@ -1,9 +1,9 @@
 // export
-export SIZES from './SIZES'
+export SIZES from './SIZES';
 
 //import
-import SIZES from './SIZES'
+import SIZES from './SIZES';
 // common export
 export default {
-  SIZES
-}
+	SIZES
+};

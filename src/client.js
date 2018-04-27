@@ -10,14 +10,14 @@ const preloadedState = window.__PRELOADED_STATE__;
 const store = configureStore(preloadedState || {});
 
 hydrate(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('root'),
+	<Provider store={store}>
+		<BrowserRouter>
+			<App/>
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById('root')
 );
 
 if (module.hot) {
-  module.hot.accept();
+	module.hot.accept();
 }
