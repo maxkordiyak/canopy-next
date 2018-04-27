@@ -1,8 +1,4 @@
-import {
-    createStore,
-    compose,
-    applyMiddleware,
-} from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
@@ -13,16 +9,17 @@ import rootReducer from '../reducers';
  * @returns {Store<any> & {dispatch: any}}
  */
 export default function configureStore(initialState = {}) {
-    return createStore(
-        rootReducer,
-        initialState,
-        compose(
-            applyMiddleware(thunk),
-            (
-                process.env.NODE_ENV !== 'production' &&
-                typeof window !== 'undefined' &&
-                window.__REDUX_DEVTOOLS_EXTENSION__) ?
-                    window.__REDUX_DEVTOOLS_EXTENSION__() :
-                    f => f
-        ));
-};
+  return createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(thunk),
+      (
+        process.env.NODE_ENV !== 'production' &&
+        typeof window !== 'undefined' &&
+        window.__REDUX_DEVTOOLS_EXTENSION__) ?
+        window.__REDUX_DEVTOOLS_EXTENSION__() :
+        f => f,
+    ),
+  );
+}
