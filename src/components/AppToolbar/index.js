@@ -7,9 +7,9 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
-import Logo from '../../assets/images/logo1.png';
-import UserIcon from '../../assets/images/user.png';
 import MenuButton from '../MenuButton';
+import Logo from '../../assets/images/logo.png';
+import UserIcon from '../../assets/images/user.png';
 import messagesIcon from '../../assets/images/messagesIcon.png';
 import notificationsIcon from '../../assets/images/notificationsIcon.png';
 
