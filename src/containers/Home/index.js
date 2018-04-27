@@ -3,7 +3,7 @@ import './index.css';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import AppToolbar from '../../components/AppToolbar';
-//import Sidebar from '../../components/Sidebar';
+//import Sidebar from '../../components/Sidebar1';
 import Sidebar from '../../components/Sidebar';
 import Typography from 'material-ui/Typography';
 
