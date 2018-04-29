@@ -97,7 +97,6 @@ class HomeContainer extends React.Component {
 				<div className={classes.root}>
 					<div className={classes.appFrame}>
 						<AppToolbar anchor={anchor}
-							anchorEl={anchorEl}
 							menuOpen={menuOpen}
 							sidebarOpen={sidebarOpen}
 							handleSidebar={this.handleSidebar}
