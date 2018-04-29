@@ -1,19 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import { connect } from 'react-redux';
+import {createMuiTheme, MuiThemeProvider, withStyles} from 'material-ui/styles';
+import {connect} from 'react-redux';
 import compose from 'recompose/compose';
-import { withRouter } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
 import Typography from 'material-ui/Typography';
-import { setMessage } from '../../actions/app';
+import {setMessage} from '../../actions/app';
 
 import './index.css';
 
+const theme = createMuiTheme({
+	palette: {
+		background: {default: '#FFF'}
+	},
+	shadows: ["none"]
+});
+
 const styles = theme => ({
 	root: {
-		flexGrow: 1
+		flexGrow: 1,
+		backgroundColor: "#F5F7F9"
 	},
 	appFrame: {
 		zIndex: 1,
@@ -58,9 +66,6 @@ class HomeContainer extends React.Component {
 		});
 	};
 
-	componentDidMount() {
-		console.log(this.props);
-	}
 
 	handleSidebar = event => {
 		this.setState({
@@ -68,36 +73,37 @@ class HomeContainer extends React.Component {
 			sidebarOpen: !this.state.sidebarOpen
 		});
 	};
-	
+
 	render() {
-		const { classes } = this.props;
-		const { anchor, anchorEl, sidebarOpen, menuOpen } = this.state;
+		const {classes} = this.props;
+		const {anchor, anchorEl, sidebarOpen, menuOpen} = this.state;
 		return (
-			<div className={classes.root}>
-				<div className={classes.appFrame}>
-					<AppToolbar anchor={anchor}
-						anchorEl={anchorEl}
-						menuOpen={menuOpen}
-						sidebarOpen={sidebarOpen}
-						handleSidebar={this.handleSidebar}
-						handleMenu={this.handleMenu}
-					/>
-					<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
-					{/*MAIN CONTENT HERE*/}
-					<main className={classes.content}>
-						<div className={classes.toolbar}/>
-						<Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
-					</main>
+			<MuiThemeProvider theme={theme}>
+				<div className={classes.root}>
+					<div className={classes.appFrame}>
+						<AppToolbar anchor={anchor}
+												anchorEl={anchorEl}
+												menuOpen={menuOpen}
+												sidebarOpen={sidebarOpen}
+												handleSidebar={this.handleSidebar}
+												handleMenu={this.handleMenu}
+						/>
+						<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
+						{/*MAIN CONTENT HERE*/}
+						<main className={classes.content}>
+							<div className={classes.toolbar}/>
+							<Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+						</main>
+					</div>
 				</div>
-			</div>
-		
+			</MuiThemeProvider>
 		);
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
-		setMessage:() => dispatch(setMessage())
+		setMessage: () => dispatch(setMessage())
 	};
 };
 

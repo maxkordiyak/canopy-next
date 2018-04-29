@@ -5,7 +5,6 @@ import SIZES from '../../constants/SIZES';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import List from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -100,9 +99,7 @@ class Sidebar extends React.Component {
 							{theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
 						</IconButton>
 					</div>
-					<Divider/>
 					<List>{mailFolderListItems}</List>
-					<Divider/>
 					<List>{otherMailFolderListItems}</List>
 				</Drawer>
 			</div>
