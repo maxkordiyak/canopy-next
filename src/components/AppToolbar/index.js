@@ -5,12 +5,11 @@ import SIZES from '../../constants/SIZES';
 import {withStyles} from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 import MenuButton from '../MenuButton';
 import UserIcon from '../../assets/images/user.png';
 import messagesIcon from '../../assets/images/messagesIcon.png';
 import notificationsIcon from '../../assets/images/notificationsIcon.png';
-
+import IntegrationAutosuggest from '../../components/Autocomplete';
 
 const styles = theme => ({
 	appBar: {
@@ -38,9 +37,6 @@ const styles = theme => ({
 	hide: {
 		display: 'none'
 	},
-	toolbarHeader: {
-		flexGrow: 2
-	},
 	content: {
 		flexGrow: 1,
 		backgroundColor: theme.palette.background.default,
@@ -67,6 +63,9 @@ const styles = theme => ({
 	},
 	'contentShift-right': {
 		marginRight: 0
+	},
+	margin: {
+		margin: theme.spacing.unit
 	}
 });
 
@@ -98,9 +97,7 @@ class AppToolbar extends React.Component {
 					})}
 				>
 					<Toolbar>
-						<Typography className={classes.toolbarHeader} variant="title" color="inherit" noWrap>
-							Canopy
-						</Typography>
+						<IntegrationAutosuggest />
 						<MenuButton type="img" iconType={notificationsIcon} items={['Unread notifications', 'All notifications']}/>
 						<MenuButton type="img" iconType={messagesIcon} items={['Unread messages', 'All messages']}/>
 						<MenuButton type="img" iconType={UserIcon} items={['Profile', 'Logout']}/>

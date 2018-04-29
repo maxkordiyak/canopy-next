@@ -8,14 +8,30 @@ import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
 import Typography from 'material-ui/Typography';
 import {setMessage} from '../../actions/app';
-
 import './index.css';
 
 const theme = createMuiTheme({
 	palette: {
 		background: {default: '#FFF'}
+	},
+	overrides:{
+		MuiInput: {
+			underline: {
+				'&:hover:not(.MuiInput-disabled):before': {
+					borderWidth: 1,
+					backgroundColor: '#F5F7F9'
+				},
+				'&:before': {
+					backgroundColor: '#FFFFFF'
+				},
+				'&:after': {
+					backgroundColor: '#586881'
+				}
+			}
+		}
 	}
 });
+
 
 const styles = theme => ({
 	root: {

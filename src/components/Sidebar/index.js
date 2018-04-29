@@ -18,21 +18,6 @@ const styles = theme => ({
 		position: 'relative',
 		display: 'flex'
 	},
-	appBar: {
-		zIndex: theme.zIndex.drawer + 1,
-		transition: theme.transitions.create(['width', 'margin'], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen
-		})
-	},
-	appBarShift: {
-		marginLeft: drawerWidth,
-		width: `calc(100% - ${drawerWidth}px)`,
-		transition: theme.transitions.create(['width', 'margin'], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.enteringScreen
-		})
-	},
 	menuButton: {
 		margin: 0
 	},
@@ -47,6 +32,7 @@ const styles = theme => ({
 		position: 'relative',
 		whiteSpace: 'nowrap',
 		width: drawerWidth,
+		borderRight: '1px solid #F5F7F9',
 		transition: theme.transitions.create('width', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen
@@ -68,6 +54,7 @@ const styles = theme => ({
 		alignItems: 'center',
 		justifyContent: 'flex-end',
 		padding: '0 8px',
+		borderBottom: '1px solid #F5F7F9',
 		...theme.mixins.toolbar
 	},
 	content: {

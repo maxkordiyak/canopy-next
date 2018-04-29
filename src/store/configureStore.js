@@ -13,7 +13,7 @@ const middleware = routerMiddleware(history);
  * @returns {Store<any> & {dispatch: any}}
  */
 export default function configureStore(initialState = {}) {
-	return createStore(
+	const store = createStore(
 		rootReducer,
 		initialState,
 		compose(
@@ -27,4 +27,12 @@ export default function configureStore(initialState = {}) {
 				f => f
 		)
 	);
+
+	if (module.hot) {
+		// Enable Webpack hot module replacement for reducers
+		module.hot.accept('../reducers/index', () => {
+			store.replaceReducer(require('../reducers').default)
+		});
+	}
+	return store;
 }
