@@ -14,8 +14,7 @@ import './index.css';
 const theme = createMuiTheme({
 	palette: {
 		background: {default: '#FFF'}
-	},
-	shadows: ['none']
+	}
 });
 
 const styles = theme => ({
@@ -43,7 +42,7 @@ const styles = theme => ({
 	content: {
 		flexGrow: 1,
 		backgroundColor: theme.palette.background.default,
-		padding: theme.spacing.unit * 3,
+		padding: `${theme.spacing.unit * 11}px  ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen

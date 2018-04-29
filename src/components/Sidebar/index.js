@@ -6,9 +6,8 @@ import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import List from 'material-ui/List';
 import IconButton from 'material-ui/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { mailFolderListItems, otherMailFolderListItems } from '../SidebarMenu';
+import Logo from '../../assets/images/logo.png';
 
 const drawerWidth = SIZES.drawerWidth;
 
@@ -35,8 +34,11 @@ const styles = theme => ({
 		})
 	},
 	menuButton: {
-		marginLeft: 12,
-		marginRight: 36
+		margin: 0
+	},
+	logoIcon: {
+		width: 48,
+		height: 'auto'
 	},
 	hide: {
 		display: 'none'
@@ -83,7 +85,7 @@ class Sidebar extends React.Component {
 	};
 	
 	render() {
-		const { classes, theme, sidebarOpen } = this.props;
+		const { classes, sidebarOpen } = this.props;
 		
 		return (
 			<div className={classes.root}>
@@ -95,8 +97,13 @@ class Sidebar extends React.Component {
 					open={sidebarOpen}
 				>
 					<div className={classes.toolbar}>
-						<IconButton onClick={this._handleSidebar}>
-							{theme.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
+						<IconButton
+							color="inherit"
+							aria-label="open drawer"
+							onClick={this._handleSidebar}
+							className={classes.menuButton}
+						>
+							<img className={classes.logoIcon} src={Logo} alt="logo"/>
 						</IconButton>
 					</div>
 					<List>{mailFolderListItems}</List>
