@@ -106,20 +106,19 @@ class AppToolbar extends React.Component {
 		return (
 			<div>
 				<AppBar color="inherit"
-								className={classNames(classes.appBar, {
-									[classes.appBarShift]: sidebarOpen,
-									[classes[`appBarShift-${anchor}`]]: sidebarOpen
-								})}
+					className={classNames(classes.appBar, {
+						[classes.appBarShift]: sidebarOpen,
+						[classes[`appBarShift-${anchor}`]]: sidebarOpen
+					})}
 				>
-
 					<Toolbar>
-						<div className={classes.menuButtonWrap}>
+						<div className={classNames(classes.menuButtonWrap, sidebarOpen &&
+							classes.hide)}>
 							<IconButton
 								color="inherit"
 								aria-label="open drawer"
 								onClick={this._handleSidebar}
-								className={classNames(classes.menuButton, sidebarOpen &&
-									classes.hide)}
+								className={classes.menuButton}
 							>
 								<img className={classes.logoIcon} src={Logo} alt="logo"/>
 							</IconButton>

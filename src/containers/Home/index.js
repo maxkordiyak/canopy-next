@@ -15,13 +15,13 @@ const theme = createMuiTheme({
 	palette: {
 		background: {default: '#FFF'}
 	},
-	shadows: ["none"]
+	shadows: ['none']
 });
 
 const styles = theme => ({
 	root: {
 		flexGrow: 1,
-		backgroundColor: "#F5F7F9"
+		backgroundColor: '#F5F7F9'
 	},
 	appFrame: {
 		zIndex: 1,
@@ -82,11 +82,11 @@ class HomeContainer extends React.Component {
 				<div className={classes.root}>
 					<div className={classes.appFrame}>
 						<AppToolbar anchor={anchor}
-												anchorEl={anchorEl}
-												menuOpen={menuOpen}
-												sidebarOpen={sidebarOpen}
-												handleSidebar={this.handleSidebar}
-												handleMenu={this.handleMenu}
+							anchorEl={anchorEl}
+							menuOpen={menuOpen}
+							sidebarOpen={sidebarOpen}
+							handleSidebar={this.handleSidebar}
+							handleMenu={this.handleMenu}
 						/>
 						<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
 						{/*MAIN CONTENT HERE*/}
