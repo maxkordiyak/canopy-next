@@ -105,7 +105,6 @@ class HomeContainer extends React.Component {
 						<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
 						{/*MAIN CONTENT HERE*/}
 						<main className={classes.content}>
-							<div className={classes.toolbar}/>
 							<Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
 						</main>
 					</div>
