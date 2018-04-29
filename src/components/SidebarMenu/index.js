@@ -1,39 +1,39 @@
 // This file is shared across the demos.
 import React from 'react';
-import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import StarIcon from '@material-ui/icons/Star';
-import SendIcon from '@material-ui/icons/Send';
-import MailIcon from '@material-ui/icons/Mail';
-import DeleteIcon from '@material-ui/icons/Delete';
-import ReportIcon from '@material-ui/icons/Report';
+import {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
+import Dashboard from '@material-ui/icons/Dashboard';
+import Home from '@material-ui/icons/Home';
+import AccountBox from '@material-ui/icons/AccountBox';
+import VpnKey from '@material-ui/icons/VpnKey';
+import Group from '@material-ui/icons/Group';
+import HelpOutline from '@material-ui/icons/HelpOutline';
+import Tooltip from 'material-ui/Tooltip';
 
 export const mailFolderListItems = (
 	<div>
 		<ListItem button>
-			<ListItemIcon>
-				<InboxIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Inbox"/>
+			<Tooltip id="tooltip-bottom" title="Dashboard" placement="bottom">
+				<ListItemIcon>
+					<Dashboard/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Dashboard"/>
 		</ListItem>
 		<ListItem button>
-			<ListItemIcon>
-				<StarIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Starred"/>
+			<Tooltip id="tooltip-properties" title="Properties" placement="bottom">
+				<ListItemIcon>
+					<Home/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Properties"/>
 		</ListItem>
 		<ListItem button>
-			<ListItemIcon>
-				<SendIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Send mail"/>
-		</ListItem>
-		<ListItem button>
-			<ListItemIcon>
-				<DraftsIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Drafts"/>
+			<Tooltip id="tooltip-users" title="Addresses" placement="bottom">
+				<ListItemIcon>
+					<AccountBox/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Addresses"/>
 		</ListItem>
 	</div>
 );
@@ -41,22 +41,28 @@ export const mailFolderListItems = (
 export const otherMailFolderListItems = (
 	<div>
 		<ListItem button>
-			<ListItemIcon>
-				<MailIcon/>
-			</ListItemIcon>
-			<ListItemText primary="All mail"/>
+			<Tooltip id="tooltip-landlords" title="Landlords" placement="bottom">
+				<ListItemIcon>
+					<VpnKey/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Landlords"/>
 		</ListItem>
 		<ListItem button>
-			<ListItemIcon>
-				<DeleteIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Trash"/>
+			<Tooltip id="tooltip-renters" title="Renters" placement="bottom">
+				<ListItemIcon>
+					<Group/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Renters"/>
 		</ListItem>
 		<ListItem button>
-			<ListItemIcon>
-				<ReportIcon/>
-			</ListItemIcon>
-			<ListItemText primary="Spam"/>
+			<Tooltip id="tooltip-help" title="Help" placement="bottom">
+				<ListItemIcon>
+					<HelpOutline/>
+				</ListItemIcon>
+			</Tooltip>
+			<ListItemText primary="Help"/>
 		</ListItem>
 	</div>
 );
