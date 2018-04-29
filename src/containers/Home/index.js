@@ -91,7 +91,7 @@ class HomeContainer extends React.Component {
 
 	render() {
 		const {classes} = this.props;
-		const {anchor, anchorEl, sidebarOpen, menuOpen} = this.state;
+		const {anchor, sidebarOpen, menuOpen} = this.state;
 		return (
 			<MuiThemeProvider theme={theme}>
 				<div className={classes.root}>
