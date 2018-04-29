@@ -9,6 +9,7 @@ import { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
 import { InputAdornment } from 'material-ui/Input';
 import Search from '@material-ui/icons/Search';
+import { CircularProgress } from 'material-ui/Progress';
 
 const suggestions = [
 	{ label: 'Afghanistan' },
@@ -73,6 +74,12 @@ const styles = theme => ({
 		[theme.breakpoints.up('sm')]: {
 			width: theme.spacing.unit * 50
 		}
+	},
+	flexRow: {
+		display: 'flex',
+		flexDirection: 'row',
+		flexWrap: 'nowrap',
+		alignItems: 'center'
 	}
 });
 
@@ -80,16 +87,19 @@ function renderInput(inputProps) {
 	const { classes, ref, ...other } = inputProps;
 
 	return (
-		<TextField
-			InputProps={{
-				inputRef: ref,
-				classes: {
-					input: classes.searchInput
-				},
-				startAdornment: <InputAdornment position="start"><Search /></InputAdornment>,
-				...other
-			}}
-		/>
+		<div className={classes.flexRow}>
+			<TextField
+				InputProps={{
+					inputRef: ref,
+					classes: {
+						input: classes.searchInput
+					},
+					startAdornment: <InputAdornment position="start"><Search /></InputAdornment>,
+					...other
+				}}
+			/>
+			<CircularProgress size={24}/>
+		</div>
 	);
 }
 
