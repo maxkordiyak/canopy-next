@@ -35,7 +35,7 @@ const styles = theme => ({
 	column: {
 		flexBasis: '100%',
 		display: 'flex',
-    alignItems: 'center'
+		alignItems: 'center'
 	},
 	column1: {
 		flexBasis: '100%'
@@ -52,7 +52,7 @@ const styles = theme => ({
 	},
 	alignright: {
 		justifyContent: 'flex-end',
-		textAlign: 'right',
+		textAlign: 'right'
 	},
 	helper: {
 		borderLeft: `2px solid ${theme.palette.divider}`,
@@ -81,7 +81,7 @@ function Accordion(props) {
 	const Wrapper = subTitle;
 	return (
 		<div className={classes.root}>
-			<ExpansionPanel defaultExpanded>
+			<ExpansionPanel>
 				<ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
 					<div className={colClasses}>
 						<Typography className={classes.heading}>{title}</Typography>
