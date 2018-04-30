@@ -66,6 +66,9 @@ const styles = theme => ({
 	},
 	margin: {
 		margin: theme.spacing.unit
+	},
+	sideMargins: {
+		margin: `0 ${theme.spacing.unit}`
 	}
 });
 
@@ -80,13 +83,9 @@ class AppToolbar extends React.Component {
 		const {handleMenu} = this.props;
 		handleMenu(event);
 	};
-
-	componentDidMount() {
-		console.log(this.props);
-	}
-
+	
 	render() {
-		const {classes, anchor, sidebarOpen} = this.props;
+		const {classes, anchor, sidebarOpen, theme } = this.props;
 		return (
 			<div>
 				<AppBar color="inherit"
@@ -96,11 +95,12 @@ class AppToolbar extends React.Component {
 						[classes[`appBarShift-${anchor}`]]: sidebarOpen
 					})}
 				>
+					
 					<Toolbar>
 						<IntegrationAutosuggest />
 						<MenuButton type="img" iconType={notificationsIcon} items={['Unread notifications', 'All notifications']}/>
-						<MenuButton type="img" iconType={messagesIcon} items={['Unread messages', 'All messages']}/>
-						<MenuButton type="img" iconType={UserIcon} items={['Profile', 'Logout']}/>
+						<MenuButton margins={{margin: `0 ${theme.spacing.unit}px`}} type="img" iconType={messagesIcon} items={['Unread messages', 'All messages']}/>
+						<MenuButton margins={{margin: `0 ${theme.spacing.unit}px`}} type="img" iconType={UserIcon} items={['Profile', 'Logout']}/>
 					</Toolbar>
 				</AppBar>
 			</div>

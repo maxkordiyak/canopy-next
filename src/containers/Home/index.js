@@ -4,9 +4,11 @@ import {createMuiTheme, MuiThemeProvider, withStyles} from 'material-ui/styles';
 import {connect} from 'react-redux';
 import compose from 'recompose/compose';
 import {withRouter} from 'react-router-dom';
+import RentPassport from '../RentPassport';
 import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
-import Typography from 'material-ui/Typography';
+
+
 import {setMessage} from '../../actions/app';
 import './index.css';
 
@@ -106,7 +108,7 @@ class HomeContainer extends React.Component {
 						<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
 						{/*MAIN CONTENT HERE*/}
 						<main className={classes.content}>
-							<Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+							<RentPassport />
 						</main>
 					</div>
 				</div>

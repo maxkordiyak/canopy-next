@@ -16,7 +16,7 @@ class MenuButton extends React.Component {
 	};
 	
 	render() {
-		const { type, iconType, items } = this.props;
+		const { type, iconType, items, margins } = this.props;
 		const { anchorEl } = this.state;
 		const open = Boolean(anchorEl);
 		const Wrapper = iconType;
@@ -25,7 +25,7 @@ class MenuButton extends React.Component {
 		);
 		
 		return (
-			<div>
+			<div style={margins && margins}>
 				<IconButton
 					aria-owns={open ? 'menu-appbar' : null}
 					aria-haspopup="true"
