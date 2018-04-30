@@ -6,6 +6,8 @@ import Grid from 'material-ui/Grid';
 import Accordion from '../../components/Accordion';
 import Typography from 'material-ui/Typography';
 import VerifiedSign from '../../assets/images/verified.jpg';
+import Button from 'material-ui/Button';
+
 const styles = theme => ({
 	root: {
 		flexGrow: 1
@@ -16,6 +18,13 @@ const styles = theme => ({
 		color: theme.palette.text.secondary
 	}
 });
+
+const reviewsCategories = () => (
+	<div>
+		<Button variant="flat" color="secondary">Given (3)</Button>
+		<Button variant="flat" color="secondary">Received (2)</Button>
+	</div>
+);
 
 function RentPassport(props) {
 	const { classes } = props;
@@ -40,6 +49,11 @@ function RentPassport(props) {
 					<Paper className={classes.paper}>
 						  <Typography variant="subheading" gutterBottom>My Property</Typography>
 					</Paper>
+					<Accordion title={'Reviews'}
+						subTitle={reviewsCategories}
+						subTitleAlign={'right'}
+						columns={2}
+					/>
 				</Grid>
 			</Grid>
 		</div>

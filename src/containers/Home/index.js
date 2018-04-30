@@ -47,6 +47,24 @@ const theme = createMuiTheme({
 					backgroundColor: '#586881'
 				}
 			}
+		},
+		MuiButton: {
+			flatSecondary: {
+				background: 'transparent',
+				borderRadius: 3,
+				border: 0,
+				color: '#b5bec9',
+				transitionDuration: '0ms',
+				height: 28,
+				padding: '0 10px',
+				textTransform: 'none',
+				boxShadow: 'none',
+				'&:hover': {
+					borderWidth: 1,
+					backgroundColor: '#f6f9fc',
+					color: '#6b7c93'
+				}
+			}
 		}
 	}
 });
@@ -112,6 +130,7 @@ class HomeContainer extends React.Component {
 	};
 
 	render() {
+
 		const {classes} = this.props;
 		const {anchor, sidebarOpen, menuOpen} = this.state;
 		return (
