@@ -114,7 +114,7 @@ const styles = theme => ({
 	}
 });
 
-function renderInput(inputProps) {
+const renderInput = inputProps => {
 	const { classes, ref, loading, ...other } = inputProps;
 	return (
 		<div className={classes.flexRow}>
@@ -156,11 +156,11 @@ const renderSuggestion = (suggestion, { query, isHighlighted }) => {
 	);
 };
 
-function escapeRegexCharacters(str) {
+const escapeRegexCharacters = str => {
 	return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function renderSectionTitle(section) {
+const renderSectionTitle = section => {
 	return (
 		<Typography style={{
 			padding: '0 16px',
@@ -170,11 +170,11 @@ function renderSectionTitle(section) {
 	);
 }
 
-function getSectionSuggestions(section) {
+const getSectionSuggestions = section => {
 	return section.suggestions;
 }
 
-function renderSuggestionsContainer(options) {
+const renderSuggestionsContainer = options => {
 	const { containerProps, children } = options;
 	return (
 		<Paper {...containerProps}>
@@ -183,11 +183,11 @@ function renderSuggestionsContainer(options) {
 	);
 }
 
-function getSuggestionValue(suggestion) {
+const getSuggestionValue = suggestion => {
 	return suggestion.name;
 }
 
-function getSuggestions(value) {
+const getSuggestions = value => {
 	const escapedValue = escapeRegexCharacters(value);
 	if (escapedValue === '') {
 		return [];
