@@ -14,16 +14,21 @@ const drawerWidth = SIZES.drawerWidth;
 const styles = theme => ({
 	root: {
 		zIndex: 1,
-		overflow: 'hidden',
 		position: 'relative',
-		display: 'flex'
+		display: 'flex',
+		[theme.breakpoints.up('sm')]: {
+			overflow: 'hidden'
+		}
 	},
 	menuButton: {
 		margin: 0
 	},
 	logoIcon: {
-		width: 48,
-		height: 'auto'
+		width: theme.spacing.unit * 4,
+		height: 'auto',
+		[theme.breakpoints.up('sm')]: {
+			width: theme.spacing.unit * 6
+		}
 	},
 	hide: {
 		display: 'none'
@@ -53,9 +58,12 @@ const styles = theme => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'flex-end',
-		padding: '0 8px',
+		padding: 0,
 		borderBottom: '1px solid #F5F7F9',
-		...theme.mixins.toolbar
+		...theme.mixins.toolbar,
+		[theme.breakpoints.up('sm')]: {
+			padding: '0 8px'
+		}
 	},
 	content: {
 		flexGrow: 1,
@@ -70,7 +78,7 @@ class Sidebar extends React.Component {
 		const { handleSidebar } = this.props;
 		handleSidebar(event);
 	};
-	
+
 	render() {
 		const { classes, sidebarOpen } = this.props;
 		

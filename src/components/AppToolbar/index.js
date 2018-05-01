@@ -14,12 +14,16 @@ import IntegrationAutosuggest from '../../components/Autocomplete';
 const styles = theme => ({
 	appBar: {
 		position: 'absolute',
-		marginLeft: 72,
-		width: 'calc(100% - 72px)',
+		marginLeft: 56,
+		width: 'calc(100% - 56px)',
 		transition: theme.transitions.create(['margin', 'width'], {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen
-		})
+		}),
+		[theme.breakpoints.up('sm')]: {
+			marginLeft: 72,
+			width: 'calc(100% - 72px)'
+		}
 	},
 	appBarShift: {
 		width: `calc(100% - ${SIZES.drawerWidth}px)`,
@@ -95,7 +99,6 @@ class AppToolbar extends React.Component {
 						[classes[`appBarShift-${anchor}`]]: sidebarOpen
 					})}
 				>
-					
 					<Toolbar>
 						<IntegrationAutosuggest />
 						<MenuButton type="img" iconType={notificationsIcon} items={['Unread notifications', 'All notifications']}/>

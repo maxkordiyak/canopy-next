@@ -98,11 +98,14 @@ const styles = theme => ({
 		flexGrow: 1,
 		backgroundColor: theme.palette.background.default,
 		marginTop:`${theme.spacing.unit * 8}px`,
-		padding: `${theme.spacing.unit * 3}px`,
+		padding: `${theme.spacing.unit * 2}px`,
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen
-		})
+		}),
+		[theme.breakpoints.up('sm')]: {
+			padding: `${theme.spacing.unit * 3}px`
+		}
 	}
 });
 
