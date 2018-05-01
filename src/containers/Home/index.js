@@ -42,6 +42,14 @@ const theme = createMuiTheme({
 				}
 			}
 		},
+		MuiExpansionPanelSummary: {
+			content: {
+				minHeight: 40,
+				'&$expanded': {
+					margin: '12px 0'
+				}
+			}
+		},
 		MuiInput: {
 			underline: {
 				'&:hover:not(.MuiInput-disabled):before': {
