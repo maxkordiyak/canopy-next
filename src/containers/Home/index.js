@@ -7,8 +7,6 @@ import {withRouter} from 'react-router-dom';
 import RentPassport from '../RentPassport';
 import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
-
-
 import {setMessage} from '../../actions/app';
 import './index.css';
 
@@ -17,6 +15,16 @@ const theme = createMuiTheme({
 		background: {default: '#FFF'}
 	},
 	overrides:{
+		MuiBadge: {
+			badge: {
+				width: 12,
+				height: 12,
+				top: 10,
+				right: 10,
+				border: '2px solid #FFF',
+				fontSize: 0
+			}
+		},
 		MuiPaper: {
 			rounded: {
 				borderRadius: 4
