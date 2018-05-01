@@ -12,7 +12,7 @@ import {InputAdornment} from 'material-ui/Input';
 import Search from '@material-ui/icons/Search';
 import {CircularProgress} from 'material-ui/Progress';
 import Hidden from 'material-ui/Hidden';
-
+import './index.css';
 
 const suggestions = [
 	{
@@ -85,6 +85,7 @@ const suggestions = [
 	}
 ];
 
+
 const styles = theme => ({
 	hide: {
 		display: 'none',
@@ -149,7 +150,6 @@ const styles = theme => ({
 		alignItems: 'center'
 	}
 });
-
 
 
 const renderSuggestion = (suggestion, {query, isHighlighted}) => {
