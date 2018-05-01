@@ -1,0 +1,12 @@
+@import "../../assets/scss/base";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+.textTruncate {
+  min-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

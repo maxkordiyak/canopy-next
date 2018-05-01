@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import classNames from 'classnames';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -14,6 +13,7 @@ import Search from '@material-ui/icons/Search';
 import {CircularProgress} from 'material-ui/Progress';
 import Hidden from 'material-ui/Hidden';
 
+
 const suggestions = [
 	{
 		title: 'Properties',
@@ -24,6 +24,10 @@ const suggestions = [
 			},
 			{
 				name: 'Stevenage Rd, St Ippolyts, Hitchin SG4 9YD, UK',
+				info: 'Apt'
+			},
+			{
+				name: 'Test property, St Thomas, London WS11 3BS, UK',
 				info: 'Apt'
 			}
 		]
@@ -146,12 +150,14 @@ const styles = theme => ({
 	}
 });
 
+
+
 const renderSuggestion = (suggestion, {query, isHighlighted}) => {
 	const matches = match(suggestion.name, query);
 	const parts = parse(suggestion.name, matches);
 	return (
 		<MenuItem selected={isHighlighted} component="div">
-			<div>
+			<div className="textTruncate">
 				{parts.map((part, index) => {
 					return part.highlight ? (
 						<span key={String(index)} style={{fontWeight: 300}}>
@@ -243,7 +249,6 @@ class IntegrationAutosuggest extends React.Component {
 			startAdornment: <div style={{display: 'flex'}} >{!showInput && <InputAdornment position="start"><Search/></InputAdornment>}</div>,
 			...other
 		};
-
 
 		return (
 			<div className={classes.flexRow}>
