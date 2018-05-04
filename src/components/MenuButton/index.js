@@ -33,7 +33,7 @@ class MenuButton extends React.Component {
 							aria-haspopup="true"
 							onClick={this.handleMenu}
 						>
-							{type ? <img src={Wrapper} alt=""/> : <Wrapper/>}
+							{type ? <span><img src={Wrapper} alt={iconType}/></span> : <Wrapper/>}
 						</IconButton>
 					</Badge>
 				) : (

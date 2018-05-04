@@ -1,7 +1,10 @@
 import app from './server';
 import http from 'http';
 
-const server = http.createServer(app);
+// Use `app#callback()` method here instead of directly
+// passing `app` as an argument to `createServer` (or use `app#listen()` instead)
+// @see https://github.com/koajs/koa/blob/master/docs/api/index.md#appcallback
+const server = http.createServer(app.callback());
 
 let currentApp = app;
 
