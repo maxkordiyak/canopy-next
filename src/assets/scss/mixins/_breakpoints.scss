@@ -32,19 +32,19 @@
 	}
 	// 360px and less
 	@if $point == xs-down {
-		@media only screen and (min-width: #{$xs-up}) {
+		@media only screen and (max-width: #{$xs-up}) {
 			@content;
 		}
 	}
 	// 600px and less
 	@if $point == sm-down {
-		@media only screen and (min-width: #{$sm}) {
+		@media only screen and (max-width: #{$sm}) {
 			@content;
 		}
 	}
 		// 992px and less
 	@else if $point == md-down {
-		@media only screen and (min-width: #{$md}) {
+		@media only screen and (max-width: #{$md}) {
 			@content;
 		}
 	}
@@ -56,7 +56,7 @@
 	}
 		// 1600px and less
 	@else if $point == xl-down {
-		@media only screen and (min-width: #{$xl}) {
+		@media only screen and (max-width: #{$xl}) {
 			@content;
 		}
 	}

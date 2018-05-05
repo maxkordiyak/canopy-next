@@ -1,0 +1,94 @@
+
+// Margin/Paddings Helper
+// loop that generates margin and padding helper classes
+// the output is like .m-8, .mt-16, mr-24, pb-32 etc...
+$properties: (margin, padding); // m -margin, p -padding
+$sides: (top, right, bottom, left);
+@each $prop in $properties {
+  @for $i from 1 through 4 {
+    .#{str-slice($prop, 0, 1)}-#{$i*8} {
+      #{$prop}: #{$i*8}px;
+      @include breakpoint(sm-down) {
+        #{$prop}: #{$i*4}px;
+      }
+    }
+    @each $side in $sides {
+      .#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i*8} {
+        #{$prop}-#{$side}: #{$i*8}px;
+        @include breakpoint(sm-down) {
+          #{$prop}-#{$side}: #{$i*4}px;
+        }
+      }
+    }
+  }
+}
+// the output is like .no-m, .no-pt etc...
+@each $prop in $properties {
+  .no-#{str-slice($prop, 0, 1)} {
+    #{$prop}: 0;
+  }
+  @each $side in $sides {
+    .no-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)} {
+      #{$prop}-#{$side}: 0;
+    }
+  }
+}
+
+
+.flex-row {
+  @include flexbox();
+  @include flex-direction(row);
+  //Generate grid
+  @include flex-values(width);
+}
+
+.flex-column {
+  @include flexbox();
+  @include flex-direction(column);
+  //Generate grid
+  @include flex-values(height);
+}
+
+.flex-wrap {
+  @include flex-wrap(wrap);
+}
+
+.flex-nowrap {
+  @include flex-wrap(nowrap);
+}
+
+.align-stretch {
+  @include align-items(stretch);
+}
+
+.align-center {
+  @include align-items(center);
+}
+
+.align-top {
+  @include align-items(top);
+}
+
+.align-bottom {
+  @include align-items(bottom);
+}
+
+.justify-start {
+  @include justify-content(start);
+}
+
+.justify-center {
+  @include justify-content(center);
+}
+
+.justify-top {
+  @include justify-content(center);
+}
+
+.justify-bottom {
+  @include justify-content(bottom);
+}
+
+.flex-auto {
+  @include flex(1 1 auto);
+}

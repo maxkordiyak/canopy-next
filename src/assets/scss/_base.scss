@@ -1,6 +1,9 @@
 @import "variables/variables";
+@import "mixins/mixins";
 // N.B. include breakpoints only with variables!
 @import "mixins/breakpoints";
+@import "mixins/flexbox";
+@import "mixins/utils";
 @import "fonts/nexafont";
 @import "fonts/montserrat";
 
@@ -26,34 +29,6 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
-}
-
-.flexRow {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-
-.flexRowWrap {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-.alignCenter {
-	align-items: center;
-}
-
-.justifyCenter {
-	justify-content: center;
-}
-
-.sp8 {
-	padding: 0 $regular-spacer;
-}
-
-.sp16 {
-	padding: 0 $large-spacer;
 }
 
 .verifiedBadge {

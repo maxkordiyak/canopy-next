@@ -24,16 +24,16 @@ const styles = theme => ({
 
 
 const reviewsCategories = () => (
-	<div className="flexRow">
-		<Typography variant="body2" className="sp16">Given (3)</Typography>
+	<div className="flex-row">
+		<Typography variant="body2" className="pr-16 pl-16">Given (3)</Typography>
 		<Typography variant="body2">Received (2)</Typography>
 	</div>
 );
 
 
 const verifiedSign = () => (
-	<div className="flexRow alignCenter justifyCenter">
-		<Typography variant="body2" className="sp8">Verified</Typography>
+	<div className="flex-row align-center justify-center">
+		<Typography variant="body2" className="pr-8 pl-8">Verified</Typography>
 		<img className="verifiedBadge" src={VerifiedBadge} alt="Verified Badge"/>
 	</div>
 );
@@ -44,7 +44,7 @@ function RentPassport(props) {
 	return (
 		<div className={classes.root}>
 			<Grid container spacing={16}>
-				<Grid item xs={12} sm={6}>
+				<Grid item xs={12} md={6}>
 					<Paper className={classes.paper}>
 						<Typography variant="subheading" gutterBottom>
 							My RentPassport&trade;
@@ -56,7 +56,7 @@ function RentPassport(props) {
 										 columns={2}
 										 />
 				</Grid>
-				<Grid item xs={12} sm={6}>
+				<Grid item xs={12} md={6}>
 					<Paper className={classes.paper}>
 						  <Typography variant="subheading" gutterBottom>My Property</Typography>
 					</Paper>
