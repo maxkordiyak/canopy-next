@@ -1,0 +1,85 @@
+@mixin breakpoint($point) {
+  @if $point == max-hg {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  }
+
+  @if $point == hg {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+
+  @if $point == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $point == max-lg {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+/* 992px (Small Desktop) */
+
+  @else if $point == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  //until
+  @else if $point == max-md {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+
+/* 800px (Large Tablets) */
+
+  //from
+  @else if $point == sm {
+    @media (min-width: 800px) {
+      @content;
+    }
+  }
+
+  //until
+  @else if $point == max-sm {
+    @media (max-width: 800px) {
+      @content;
+    }
+  }
+
+  /* 660px (Small Tablets and Phones Landscape) */
+  //from
+  @else if $point == xsm  {
+    @media (min-width: 660px) {
+      @content;
+    }
+  }
+
+  //until
+  @else if $point == max-xsm {
+    @media (max-width: 660px) {
+      @content;
+    }
+  }
+
+/* 480px (Regular smartphone) */
+  @else if $point == xs {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+  @else if $point == retina {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+
+}

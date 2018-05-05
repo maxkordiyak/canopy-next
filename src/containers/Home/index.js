@@ -14,6 +14,9 @@ const theme = createMuiTheme({
 	palette: {
 		background: {default: '#FFF'}
 	},
+	typography: {
+		fontFamily: 'inherit'
+	},
 	overrides:{
 		MuiBadge: {
 			badge: {
