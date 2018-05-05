@@ -6,30 +6,32 @@ const styles = theme => ({
 	},
 	appFrame: {
 		zIndex: 1,
-		height: '100vh',
+		minHeight: '100vh',
 		overflow: 'hidden',
 		position: 'relative',
 		display: 'flex',
+		flexWrap: 'wrap',
 		width: '100%'
 	},
 	drawer: {
 		position: 'relative',
 		width: '100%',
 		backgroundColor: theme.palette.common.white,
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			width: '40%'
 		}
 	},
 	drawerPaper: {
 		minWidth: '100%',
+		height: '100%',
 		position: 'relative',
 		backgroundColor: theme.palette.common.white,
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'flex-start',
-		padding: '4em 2em',
-		[theme.breakpoints.up('sm')]: {
+		padding: '3em 2em',
+		[theme.breakpoints.up('md')]: {
 			width: '40%',
 			padding: '6em 4em'
 		}
@@ -48,7 +50,7 @@ const styles = theme => ({
 		width: '100%',
 		backgroundColor: '#f4f7fb',
 		padding: '10%',
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			width: '60%',
 			padding: '6em 4em'
 		},
@@ -64,7 +66,7 @@ const styles = theme => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			padding: `${theme.spacing.unit * 8}px`
 		},
 		[theme.breakpoints.up('lg')]: {
