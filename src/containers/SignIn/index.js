@@ -21,7 +21,6 @@ class SignInContainer extends React.Component {
 					<div className={classes.appFrame}>
 						<Drawer
 							variant="permanent"
-							anchor={'left'}
 							classes={{
 								docked: classes.drawer,
 								paper: classes.drawerPaper

@@ -49,10 +49,10 @@ const styles = theme => ({
 		flexGrow: 1,
 		width: '100%',
 		backgroundColor: '#f4f7fb',
-		padding: '10%',
+		padding: '2em 1.5em',
 		[theme.breakpoints.up('md')]: {
 			width: '60%',
-			padding: '6em 4em'
+			padding: '4em 3em'
 		},
 		[theme.breakpoints.up('lg')]: {
 			width: '60%',
@@ -61,7 +61,7 @@ const styles = theme => ({
 	},
 	contentPaper: {
 		flexGrow: 1,
-		padding: `${theme.spacing.unit * 5}px`,
+		padding: `${theme.spacing.unit * 3}px`,
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
