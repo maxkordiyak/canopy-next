@@ -5,7 +5,38 @@ const theme = createMuiTheme({
 		background: {default: '#FFF'}
 	},
 	typography: {
-		fontFamily: 'inherit'
+		fontFamily: 'inherit',
+
+		display4: {
+			color: 'inherit'
+		},
+		display3: {
+			color: 'inherit'
+		},
+		display2: {
+			color: 'inherit'
+		},
+		display1: {
+			color: 'inherit'
+		},
+		headline: {
+			color: 'inherit'
+		},
+		title: {
+			color: 'inherit'
+		},
+		subheading: {
+			color: 'inherit'
+		},
+		body2: {
+			color: 'inherit'
+		},
+		body1: {
+			color: 'inherit'
+		},
+		caption: {
+			color: 'inherit'
+		}
 	},
 	overrides:{
 		MuiBadge: {
