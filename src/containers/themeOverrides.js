@@ -6,7 +6,6 @@ const theme = createMuiTheme({
 	},
 	typography: {
 		fontFamily: 'inherit',
-
 		display4: {
 			color: 'inherit'
 		},
