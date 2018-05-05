@@ -35,7 +35,7 @@ const styles = theme => ({
 		}
 	},
 	logoImage: {
-		maxWidth: `${theme.spacing.unit * 30}px`,
+		maxWidth: `${theme.spacing.unit * 24}px`,
 		height: 'auto',
 		marginBottom: `${theme.spacing.unit * 6}px`
 	},
