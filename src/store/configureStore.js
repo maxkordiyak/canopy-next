@@ -1,11 +1,9 @@
 import { applyMiddleware, compose, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
-import history from './history';
+import createBrowserHistory from 'history/createBrowserHistory';
+import createMemoryHistory from 'history/createMemoryHistory';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
-
-
-const middleware = routerMiddleware(history);
 
 /**
  * The method is main for configuration redux store
@@ -15,6 +13,14 @@ const middleware = routerMiddleware(history);
  */
 
 const configureStore = initialState => {
+	// console.log(initialState, Object.keys(initialState).length);
+	let history, middleware
+	if (Object.keys(initialState).length === 0) {
+		history = createMemoryHistory();
+	} else {
+		history = createBrowserHistory();
+	}
+	middleware = routerMiddleware(history);
 	const store = createStore(
 		combineReducers({
 			...rootReducer,

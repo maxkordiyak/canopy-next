@@ -24,6 +24,7 @@ router.get(
 	(ctx, next) => {
 		const context = {};
 		const store = configureStore({});
+		// Create a history of your choosing (we're using a browser history in this case)
 		const markup = renderToString(<Provider store={store}>
 			<StaticRouter context={context} location={ctx.url}>
 				<App />

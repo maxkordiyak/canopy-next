@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom'
-import {createMuiTheme, MuiThemeProvider, withStyles} from 'material-ui/styles';
+import {MuiThemeProvider, withStyles} from 'material-ui/styles';
 import {connect} from 'react-redux';
 import compose from 'recompose/compose';
 import {withRouter} from 'react-router-dom';
