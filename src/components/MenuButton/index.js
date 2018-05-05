@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Badge from 'material-ui/Badge';
 import IconButton from 'material-ui/IconButton';
@@ -7,23 +8,28 @@ class MenuButton extends React.Component {
 	state = {
 		anchorEl: null
 	};
-	
+
 	handleMenu = event => {
 		this.setState({ anchorEl: event.currentTarget });
 	};
-	
+
 	handleClose = () => {
 		this.setState({ anchorEl: null });
 	};
-	
+
 	render() {
 		const { badge, type, iconType, items, margins } = this.props;
 		const { anchorEl } = this.state;
 		const open = Boolean(anchorEl);
 		const Wrapper = iconType;
-		const listItems = items.map((link) =>
-			<MenuItem key={link} onClick={this.handleClose}>{link}</MenuItem>
-		);
+		const listItems = items.map((item) => {
+			if (Array.isArray(item)) {
+				const [text, link] = item;
+				return <Link key={text} to={link}><MenuItem>{text}</MenuItem></Link>;
+			} else {
+				return <MenuItem key={item} onClick={this.handleClose}>{item}</MenuItem>;
+			}
+		});
 		return (
 			<div style={margins && margins}>
 				{badge ? (
@@ -64,7 +70,7 @@ class MenuButton extends React.Component {
 			</div>
 		);
 	}
-	
+
 }
 
 export default MenuButton;

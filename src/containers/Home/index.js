@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Switch, Route } from 'react-router-dom'
 import {createMuiTheme, MuiThemeProvider, withStyles} from 'material-ui/styles';
 import {connect} from 'react-redux';
 import compose from 'recompose/compose';
 import {withRouter} from 'react-router-dom';
+// Containers
 import RentPassport from '../RentPassport';
+import Test from '../Test';
+// Components
 import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
 import {setMessage} from '../../actions/app';
@@ -168,7 +172,11 @@ class HomeContainer extends React.Component {
 						<Sidebar sidebarOpen={sidebarOpen} anchor={anchor} handleSidebar={this.handleSidebar}/>
 						{/*MAIN CONTENT HERE*/}
 						<main className={classes.content}>
-							<RentPassport />
+							<Switch>
+								<Route exact path='/' component={RentPassport}/>
+								<Route exact path='/home' component={RentPassport}/>
+								<Route exact path='/home/test' component={Test}/>
+							</Switch>
 						</main>
 					</div>
 				</div>

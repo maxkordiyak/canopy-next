@@ -105,7 +105,7 @@ class AppToolbar extends React.Component {
 						<IntegrationAutosuggest />
 						<MenuButton badge="true" iconType={notificationsIcon} items={['Unread notifications', 'All notifications']}/>
 						<MenuButton margins={{margin: `0 ${theme.spacing.unit}px`, transform: 'scaleX(-1)'}} iconType={messagesIcon} items={['Unread messages', 'All messages']}/>
-						<MenuButton margins={{margin: `0 ${theme.spacing.unit}px`}} type="img" iconType={UserIcon} items={['Profile', 'Logout']}/>
+						<MenuButton margins={{margin: `0 ${theme.spacing.unit}px`}} type="img" iconType={UserIcon} items={['Profile', ['Logout', '/']]}/>
 					</Toolbar>
 				</AppBar>
 			</div>

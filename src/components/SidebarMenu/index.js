@@ -1,5 +1,6 @@
 // This file is shared across the demos.
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
 import Dashboard from '@material-ui/icons/Dashboard';
 import Home from '@material-ui/icons/Home';
@@ -11,22 +12,26 @@ import Tooltip from 'material-ui/Tooltip';
 
 export const mailFolderListItems = (
 	<div>
-		<ListItem button>
-			<Tooltip id="tooltip-bottom" title="Dashboard" placement="bottom">
-				<ListItemIcon>
-					<Dashboard/>
-				</ListItemIcon>
-			</Tooltip>
-			<ListItemText primary="Dashboard"/>
-		</ListItem>
-		<ListItem button>
-			<Tooltip id="tooltip-properties" title="Properties" placement="bottom">
-				<ListItemIcon>
-					<Home/>
-				</ListItemIcon>
-			</Tooltip>
-			<ListItemText primary="Properties"/>
-		</ListItem>
+		<Link to='/home'>
+			<ListItem button>
+				<Tooltip id="tooltip-bottom" title="Dashboard" placement="bottom">
+					<ListItemIcon>
+						<Dashboard/>
+					</ListItemIcon>
+				</Tooltip>
+				<ListItemText primary="Dashboard"/>
+			</ListItem>
+		</Link>
+		<Link to='/home/test'>
+			<ListItem button>
+				<Tooltip id="tooltip-properties" title="Properties" placement="bottom">
+					<ListItemIcon>
+						<Home/>
+					</ListItemIcon>
+				</Tooltip>
+				<ListItemText primary="Properties"/>
+			</ListItem>
+		</Link>
 		<ListItem button>
 			<Tooltip id="tooltip-users" title="Addresses" placement="bottom">
 				<ListItemIcon>

@@ -1,7 +1,24 @@
 /*** MAIN PROJECT VARIABLES ***/
+
+// COLORS
 $white: #ffffff;
 $black: #000000;
+$slate-gray: #586881;
 
 // FONTS
+$body-font-color: $slate-gray;
 $body-font-family: 'Montserrat-Light'; // OR
 $body-font-family2: 'Nexa-Book';
+
+
+// Media Query Ranges
+$xs-up: 361px !default;
+$sm-up: 601px !default;
+$md-up: 993px !default;
+$lg-up: 1201px !default;
+$xl-up: 1601px !default;
+$xs: 360px !default;
+$sm: 600px !default;
+$md: 992px !default;
+$lg: 1200px !default;
+$xl: 1600px !default;

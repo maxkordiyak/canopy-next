@@ -4,9 +4,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { hydrate, render } from 'react-dom';
 import configureStore from './store/configureStore';
-import history from './store/history';
+import createHistory from 'history/createBrowserHistory'
 
 const preloadedState = window.__PRELOADED_STATE__;
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory()
 
 const store = configureStore(preloadedState || {});
 

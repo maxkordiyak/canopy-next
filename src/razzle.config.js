@@ -25,7 +25,7 @@ module.exports = {
 			
 			config.optimization = {
 				splitChunks: {
-					// Chunk splitting optimiztion
+					// Chunk splitting optimization
 					chunks: 'all',
 					// Switch off name generation, otherwise files would be invalidated
 					// when more chunks with the same vendors are added

@@ -1,85 +1,75 @@
+// Responsive mixin according https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints
 @mixin breakpoint($point) {
-  @if $point == max-hg {
-    @media (max-width: 1440px) {
-      @content;
-    }
-  }
-
-  @if $point == hg {
-    @media (min-width: 1440px) {
-      @content;
-    }
-  }
-
-  @if $point == lg {
-    @media (min-width: 1200px) {
-      @content;
-    }
-  }
-
-  @if $point == max-lg {
-    @media (max-width: 1200px) {
-      @content;
-    }
-  }
-
-/* 992px (Small Desktop) */
-
-  @else if $point == md {
-    @media (min-width: 992px) {
-      @content;
-    }
-  }
-
-  //until
-  @else if $point == max-md {
-    @media (max-width: 992px) {
-      @content;
-    }
-  }
-
-
-/* 800px (Large Tablets) */
-
-  //from
-  @else if $point == sm {
-    @media (min-width: 800px) {
-      @content;
-    }
-  }
-
-  //until
-  @else if $point == max-sm {
-    @media (max-width: 800px) {
-      @content;
-    }
-  }
-
-  /* 660px (Small Tablets and Phones Landscape) */
-  //from
-  @else if $point == xsm  {
-    @media (min-width: 660px) {
-      @content;
-    }
-  }
-
-  //until
-  @else if $point == max-xsm {
-    @media (max-width: 660px) {
-      @content;
-    }
-  }
-
-/* 480px (Regular smartphone) */
-  @else if $point == xs {
-    @media (max-width: 480px) {
-      @content;
-    }
-  }
-  @else if $point == retina {
-    @media (max-width: 320px) {
-      @content;
-    }
-  }
-
+	// 361px and more
+	@if $point == xs-up {
+		@media only screen and (min-width: #{$xs-up}) {
+			@content;
+		}
+	}
+		// 601px and more
+	@else if $point == sm-up {
+		@media only screen and (min-width: #{$sm-up}) {
+			@content;
+		}
+	}
+		// 993px and more
+	@else if $point == md-up {
+		@media only screen and (min-width: #{$md-up}) {
+			@content;
+		}
+	}
+		// 1201px and more
+	@else if $point == lg-up {
+		@media only screen and (min-width: #{$lg-up}) {
+			@content;
+		}
+	}
+		// 1601px and more
+	@else if $point == xl-up {
+		@media only screen and (min-width: #{$xl-up}) {
+			@content;
+		}
+	}
+	// 360px and less
+	@if $point == xs-down {
+		@media only screen and (min-width: #{$xs-up}) {
+			@content;
+		}
+	}
+	// 600px and less
+	@if $point == sm-down {
+		@media only screen and (min-width: #{$sm}) {
+			@content;
+		}
+	}
+		// 992px and less
+	@else if $point == md-down {
+		@media only screen and (min-width: #{$md}) {
+			@content;
+		}
+	}
+		// 1200px and less
+	@else if $point == lg-down {
+		@media only screen and (min-width: #{$lg}) {
+			@content;
+		}
+	}
+		// 1600px and less
+	@else if $point == xl-down {
+		@media only screen and (min-width: #{$xl}) {
+			@content;
+		}
+	}
+		// 0 to 360px only
+	@else if $point == xs-only {
+		@media only screen and (min-width: 0) and (max-width: #{$xs}) {
+			@content;
+		}
+	}
+		// 0 to 600px only
+	@else if $point == xsm-only {
+		@media only screen and (min-width: 0) and (max-width: #{$sm}) {
+			@content;
+		}
+	}
 }
