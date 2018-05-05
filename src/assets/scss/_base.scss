@@ -5,23 +5,57 @@
 @import "fonts/montserrat";
 
 body {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 	color: $body-font-color;
-  font-family: $body-font-family; //$body-font-family2
+	font-family: $body-font-family; //$body-font-family2
 }
+
 .textBold {
-  font-family: $body-font-family; //$body-font-family2
-  font-weight: bold;
+	font-family: $body-font-family; //$body-font-family2
+	font-weight: bold;
 }
+
 .textTruncate {
-  min-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	min-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 a {
-  text-decoration: none;
-  color:inherit;
+	text-decoration: none;
+	color: inherit;
+}
+
+.flexRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.flexRowWrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.sp8 {
+	padding: 0 $regular-spacer;
+}
+
+.sp16 {
+	padding: 0 $large-spacer;
+}
+
+.verifiedBadge {
+	max-width: $regular-spacer * 2;
 }

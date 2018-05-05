@@ -42,6 +42,9 @@ router.get(
         <meta charSet='utf-8' />
         <title>Welcome to Razzle</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="rgb(90, 184, 142)">
+				<meta name="apple-itunes-app" content="app-id=1179786956">
+				<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
         ${scripts}
     </head>
     <body>

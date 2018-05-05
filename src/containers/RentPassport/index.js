@@ -5,8 +5,8 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Accordion from '../../components/Accordion';
 import Typography from 'material-ui/Typography';
-import VerifiedSign from '../../assets/images/verified.jpg';
-import Button from 'material-ui/Button';
+import VerifiedBadge from '../../assets/images/verified.png';
+
 
 const styles = theme => ({
 	root: {
@@ -16,19 +16,31 @@ const styles = theme => ({
 		padding: theme.spacing.unit * 2,
 		marginBottom: theme.spacing.unit * 2,
 		color: theme.palette.text.secondary
+	},
+	padded: {
+		padding: `0 ${theme.spacing.unit * 2}`
 	}
 });
 
+
 const reviewsCategories = () => (
-	<div>
-		<Button variant="flat" color="secondary">Given (3)</Button>
-		<Button variant="flat" color="secondary">Received (2)</Button>
+	<div className="flexRow">
+		<Typography variant="body2" className="sp16">Given (3)</Typography>
+		<Typography variant="body2">Received (2)</Typography>
+	</div>
+);
+
+
+const verifiedSign = () => (
+	<div className="flexRow alignCenter justifyCenter">
+		<Typography variant="body2" className="sp8">Verified</Typography>
+		<img className="verifiedBadge" src={VerifiedBadge} alt="Verified Badge"/>
 	</div>
 );
 
 function RentPassport(props) {
 	const { classes } = props;
-	
+
 	return (
 		<div className={classes.root}>
 			<Grid container spacing={16}>
@@ -39,9 +51,8 @@ function RentPassport(props) {
 						</Typography>
 					</Paper>
 					<Accordion title={'TrustScore\u2122'}
-										 subTitle={VerifiedSign}
+										 subTitle={verifiedSign}
 										 subTitleAlign={'right'}
-										 subTitleType={'img'}
 										 columns={2}
 										 />
 				</Grid>

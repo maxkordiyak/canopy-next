@@ -54,3 +54,28 @@ body {
 a {
   text-decoration: none;
   color: inherit; }
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+
+.flexRowWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.alignCenter {
+  align-items: center; }
+
+.justifyCenter {
+  justify-content: center; }
+
+.sp8 {
+  padding: 0 8px; }
+
+.sp16 {
+  padding: 0 16px; }
+
+.verifiedBadge {
+  max-width: 16px; }
