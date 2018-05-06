@@ -34,7 +34,7 @@ class SimpleCarousel extends React.Component {
 			<div className={classes.root}>
 				<CarouselProvider
 					naturalSlideWidth={100}
-					naturalSlideHeight={100}
+					naturalSlideHeight={80}
 					totalSlides={slides.length}
 				>
 					<Slider>
