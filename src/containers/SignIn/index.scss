@@ -1,1 +1,16 @@
-@import "../../assets/scss/base";
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins/breakpoints";
+@import "../../assets/scss/mixins/mixins";
+@import "../../assets/scss/mixins/flexbox";
+@import "../../assets/scss/mixins/utils";
+
+.sliderImage {
+	width: 100%;
+	height: auto;
+}
+.slideWrapper {
+	height: inherit;
+  @extend .flexColumn;
+  @extend .alignCenter;
+	@extend .justifySpaceAround;
+}

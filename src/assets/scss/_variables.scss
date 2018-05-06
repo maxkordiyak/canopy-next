@@ -7,12 +7,16 @@ $xlarge-spacer: $regular-spacer*3;
 $white: #ffffff;
 $black: #000000;
 $slate-gray: #586881;
+$mig-gray: #DBE0E4;
 
 // FONTS
 $body-font-color: $slate-gray;
 $body-font-family: 'Montserrat-Light'; // OR
 $body-font-family2: 'Nexa-Book';
 
+// Slider
+$dots-active-color: $slate-gray;
+$dots-inactive-color: $mig-gray;
 
 // Media Query Ranges
 $xs-up: 361px !default;

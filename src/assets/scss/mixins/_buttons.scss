@@ -1,0 +1,27 @@
+@mixin plainButton() {
+	color: inherit;
+	font-weight: normal;
+	font-family: inherit;
+	cursor: pointer;
+	background: none;
+	border: 0 none;
+}
+
+@mixin nextButton() {
+	@include plainButton();
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5em;
+  &:after {
+	  content: '>';
+  }
+}
+@mixin prevButton() {
+	@include plainButton();
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5em;
+	&:before {
+		content: '<';
+	}
+}

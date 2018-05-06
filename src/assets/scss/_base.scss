@@ -1,4 +1,4 @@
-@import "variables/variables";
+@import "variables";
 @import "mixins/mixins";
 // N.B. include breakpoints only with variables!
 @import "mixins/breakpoints";
@@ -29,6 +29,11 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+a, button {
+	&:focus {
+		outline: none;
+	}
 }
 
 .verifiedBadge {

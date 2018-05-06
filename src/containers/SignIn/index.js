@@ -5,16 +5,35 @@ import {MuiThemeProvider, withStyles} from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
-import SingUpImg from '../../assets/images/singup_pic.png';
 import LogoBig from '../../assets/images/LogoBig.png';
 import styles from './styles';
 import theme from '../themeOverrides';
+import SimpleCarousel from '../../components/SimpleCarousel';
+import './index.css';
+
+// SignIn Slides
+import slides from './slides';
+const renderSlides = () => {
+	return slides.map(slide => {
+		return (
+			<div className="slideWrapper">
+				<Typography variant="display1" align={'center'}>
+					<span dangerouslySetInnerHTML={{__html:slide.title}}/>
+				</Typography>
+				<img className="sliderImage" src={slide.image} alt={'Sing Up'}/>
+				<Typography variant="subheading" align={'center'}>
+					{slide.subtitle}
+				</Typography>
+			</div>
+		);
+	});
+};
+
 
 class SignInContainer extends React.Component {
 	state = {};
-
 	render() {
-		const {classes, history} = this.props;
+		const {classes} = this.props;
 		return (
 			<MuiThemeProvider theme={theme}>
 				<div className={classes.root}>
@@ -26,7 +45,7 @@ class SignInContainer extends React.Component {
 								paper: classes.drawerPaper
 							}}
 						>
-							<img className={classes.logoImage} src={LogoBig} alt={'Canopy Logo'} />
+							<img className={classes.logoImage} src={LogoBig} alt={'Canopy Logo'}/>
 							<Typography variant="title" paragraph={true} align={'center'}>
 								Sign In
 							</Typography>
@@ -37,17 +56,7 @@ class SignInContainer extends React.Component {
 						</Drawer>
 						<div className={classes.content}>
 							<Paper className={classes.contentPaper}>
-								<Typography variant="display1" align={'center'}>
-									Start building your <br /> TrustScore today
-								</Typography>
-								<img className={classes.singUpImage} src={SingUpImg} alt={'Sing Up'}/>
-								<Typography variant="subheading" align={'center'}>
-									Provide data, track your rent payments and obtain references to build a TrustScore that's used by
-									Agents and Landlords to validate your renting
-								</Typography>
-								<a href="" onClick={() => {
-									history.push('/home');
-								}}>Switch Home</a>
+								<SimpleCarousel slides={renderSlides()} buttons={true} dots={true}/>
 							</Paper>
 						</div>
 					</div>

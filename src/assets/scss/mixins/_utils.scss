@@ -1,94 +1,62 @@
 
-// Margin/Paddings Helper
-// loop that generates margin and padding helper classes
-// the output is like .m-8, .mt-16, mr-24, pb-32 etc...
-$properties: (margin, padding); // m -margin, p -padding
-$sides: (top, right, bottom, left);
-@each $prop in $properties {
-  @for $i from 1 through 4 {
-    .#{str-slice($prop, 0, 1)}-#{$i*8} {
-      #{$prop}: #{$i*8}px;
-      @include breakpoint(sm-down) {
-        #{$prop}: #{$i*4}px;
-      }
-    }
-    @each $side in $sides {
-      .#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i*8} {
-        #{$prop}-#{$side}: #{$i*8}px;
-        @include breakpoint(sm-down) {
-          #{$prop}-#{$side}: #{$i*4}px;
-        }
-      }
-    }
-  }
-}
-// the output is like .no-m, .no-pt etc...
-@each $prop in $properties {
-  .no-#{str-slice($prop, 0, 1)} {
-    #{$prop}: 0;
-  }
-  @each $side in $sides {
-    .no-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)} {
-      #{$prop}-#{$side}: 0;
-    }
-  }
-}
-
-
-.flex-row {
+.flexRow {
   @include flexbox();
   @include flex-direction(row);
   //Generate grid
   @include flex-values(width);
 }
 
-.flex-column {
+.flexColumn {
   @include flexbox();
   @include flex-direction(column);
   //Generate grid
   @include flex-values(height);
 }
 
-.flex-wrap {
+.flexWrap {
   @include flex-wrap(wrap);
 }
 
-.flex-nowrap {
+.flexNoWrap {
   @include flex-wrap(nowrap);
 }
 
-.align-stretch {
+.alignStretch {
   @include align-items(stretch);
 }
 
-.align-center {
+.alignCenter {
   @include align-items(center);
 }
 
-.align-top {
+.alignTop {
   @include align-items(top);
 }
 
-.align-bottom {
+.alignBottom {
   @include align-items(bottom);
 }
 
-.justify-start {
+.justifyStart {
   @include justify-content(start);
 }
 
-.justify-center {
+.justifyCenter {
   @include justify-content(center);
 }
 
-.justify-top {
+.justifyTop {
   @include justify-content(center);
 }
 
-.justify-bottom {
+.justifyBottom {
   @include justify-content(bottom);
 }
 
-.flex-auto {
+.justifySpaceAround {
+  @include justify-content(space-around);
+}
+
+.flexAuto {
   @include flex(1 1 auto);
 }
