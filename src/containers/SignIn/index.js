@@ -5,10 +5,14 @@ import {MuiThemeProvider, withStyles} from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
+import SimpleCarousel from '../../components/SimpleCarousel';
+import SignButton from '../../components/SignButton';
 import LogoBig from '../../assets/images/LogoBig.png';
+import FacebookIcon from '../../assets/images/facebook.svg';
+import TwitterIcon from '../../assets/images/twitter.svg';
+
 import styles from './styles';
 import theme from '../themeOverrides';
-import SimpleCarousel from '../../components/SimpleCarousel';
 import './index.css';
 
 // SignIn Slides
@@ -49,7 +53,11 @@ class SignInContainer extends React.Component {
 							<Typography variant="title" paragraph={true} align={'center'}>
 								Sign In
 							</Typography>
-							<div className={classes.formsWrapper}>FORMS</div>
+							<div className={classes.formsWrapper}>
+								<SignButton iconType={FacebookIcon} type="img" text={'Sign up with Facebook'}/>
+								<SignButton iconType={TwitterIcon} type="img" text={'Sign up with Twitter'}/>
+
+							</div>
 							<Typography variant="subheading" align={'center'}>
 								Don't have an account? <Link to={'/signup'} className="textBold">Sign Up</Link>
 							</Typography>

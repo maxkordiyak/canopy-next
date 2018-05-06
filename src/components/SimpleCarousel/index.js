@@ -48,7 +48,7 @@ class SimpleCarousel extends React.Component {
 							<ButtonNext>Next</ButtonNext>
 						</div>
 					)}
-					{dots && <div className="flexRow flexNoWrap alignCenter justifyCenter p-16"><DotGroup/></div>}
+					{dots && <div className="flexRow flexNoWrap alignCenter justifyCenter pt-16"><DotGroup/></div>}
 				</CarouselProvider>
 			</div>
 		);

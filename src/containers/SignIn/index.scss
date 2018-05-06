@@ -9,7 +9,7 @@
 	height: auto;
 }
 .slideWrapper {
-	height: inherit;
+	height: 100%;
   @extend .flexColumn;
   @extend .alignCenter;
 	@extend .justifySpaceAround;

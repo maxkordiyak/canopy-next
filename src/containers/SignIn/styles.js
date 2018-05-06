@@ -42,7 +42,12 @@ const styles = theme => ({
 		marginBottom: `${theme.spacing.unit * 6}px`
 	},
 	formsWrapper: {
-		minHeight: `${theme.spacing.unit * 30}px`
+		minHeight: `${theme.spacing.unit * 30}px`,
+		width: '100%',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'flex-start'
 	},
 	content: {
 		display: 'flex',
@@ -56,7 +61,7 @@ const styles = theme => ({
 		},
 		[theme.breakpoints.up('lg')]: {
 			width: '60%',
-			padding: '6em'
+			padding: '7em'
 		}
 	},
 	contentPaper: {
@@ -67,10 +72,10 @@ const styles = theme => ({
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		[theme.breakpoints.up('md')]: {
-			padding: `${theme.spacing.unit * 8}px`
+			padding: `${theme.spacing.unit * 5}px`
 		},
 		[theme.breakpoints.up('lg')]: {
-			padding: `${theme.spacing.unit * 10}px`
+			padding: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 10}px`
 		}
 	},
 	singUpImage: {
