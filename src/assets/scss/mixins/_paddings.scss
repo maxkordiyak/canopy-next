@@ -7,16 +7,16 @@ $sides: (top, right, bottom, left);
 @each $prop in $properties {
 	@for $i from 1 through 4 {
 		.#{str-slice($prop, 0, 1)}-#{$i*8} {
-			#{$prop}: #{$i*8}px;
+			#{$prop}: #{$i*8}px !important;
 			@include breakpoint(sm-down) {
-				#{$prop}: #{$i*4}px;
+				#{$prop}: #{$i*4}px !important;
 			}
 		}
 		@each $side in $sides {
 			.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i*8} {
-				#{$prop}-#{$side}: #{$i*8}px;
+				#{$prop}-#{$side}: #{$i*8}px !important;
 				@include breakpoint(sm-down) {
-					#{$prop}-#{$side}: #{$i*4}px;
+					#{$prop}-#{$side}: #{$i*4}px !important;
 				}
 			}
 		}
@@ -25,11 +25,11 @@ $sides: (top, right, bottom, left);
 // the output is like .no-m, .no-pt etc...
 @each $prop in $properties {
 	.no-#{str-slice($prop, 0, 1)} {
-		#{$prop}: 0;
+		#{$prop}: 0 !important;
 	}
 	@each $side in $sides {
 		.no-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)} {
-			#{$prop}-#{$side}: 0;
+			#{$prop}-#{$side}: 0 !important;
 		}
 	}
 }

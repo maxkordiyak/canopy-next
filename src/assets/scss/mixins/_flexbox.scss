@@ -135,3 +135,65 @@
       -ms-align-self: $align;
           align-self: $align;
 }
+
+.flexRow {
+  @include flexbox();
+  @include flex-direction(row);
+  //Generate grid
+  @include flex-values(width);
+}
+
+.flexColumn {
+  @include flexbox();
+  @include flex-direction(column);
+  //Generate grid
+  @include flex-values(height);
+}
+
+.flexWrap {
+  @include flex-wrap(wrap);
+}
+
+.flexNoWrap {
+  @include flex-wrap(nowrap);
+}
+
+.alignStretch {
+  @include align-items(stretch);
+}
+
+.alignCenter {
+  @include align-items(center);
+}
+
+.alignTop {
+  @include align-items(top);
+}
+
+.alignBottom {
+  @include align-items(bottom);
+}
+
+.justifyStart {
+  @include justify-content(start);
+}
+
+.justifyCenter {
+  @include justify-content(center);
+}
+
+.justifyTop {
+  @include justify-content(center);
+}
+
+.justifyBottom {
+  @include justify-content(bottom);
+}
+
+.justifySpaceAround {
+  @include justify-content(space-around);
+}
+
+.flexAuto {
+  @include flex(1 1 auto);
+}

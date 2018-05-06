@@ -10,6 +10,8 @@ import SignButton from '../../components/SignButton';
 import LogoBig from '../../assets/images/LogoBig.png';
 import FacebookIcon from '../../assets/images/facebook.svg';
 import TwitterIcon from '../../assets/images/twitter.svg';
+import GoogleIcon from '../../assets/images/google.svg';
+import MailIcon from '@material-ui/icons/MailOutline';
 
 import styles from './styles';
 import theme from '../themeOverrides';
@@ -50,13 +52,17 @@ class SignInContainer extends React.Component {
 							}}
 						>
 							<img className={classes.logoImage} src={LogoBig} alt={'Canopy Logo'}/>
-							<Typography variant="title" paragraph={true} align={'center'}>
+							<Typography variant="title" paragraph={true} align={'center'} gutterBottom>
 								Sign In
 							</Typography>
 							<div className={classes.formsWrapper}>
 								<SignButton iconType={FacebookIcon} type="img" text={'Sign up with Facebook'}/>
 								<SignButton iconType={TwitterIcon} type="img" text={'Sign up with Twitter'}/>
-
+								<SignButton iconType={GoogleIcon} type="img" text={'Sign up with Google'}/>
+								<Typography variant="subheading" align={'center'} className="mb-16">
+									or
+								</Typography>
+								<SignButton iconType={MailIcon} text={'Sign up with Email'} />
 							</div>
 							<Typography variant="subheading" align={'center'}>
 								Don't have an account? <Link to={'/signup'} className="textBold">Sign Up</Link>

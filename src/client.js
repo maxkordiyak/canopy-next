@@ -6,6 +6,7 @@ import { hydrate, render } from 'react-dom';
 import configureStore from './store/configureStore';
 import createHistory from 'history/createBrowserHistory';
 
+const root = document.getElementById('root')
 const preloadedState = window.__PRELOADED_STATE__;
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -19,18 +20,25 @@ renderMethod(
 			<App />
 		</ConnectedRouter>
 	</Provider>,
-	document.getElementById('root')
+	root
 );
 
 if (module.hot) {
-	module.hot.accept(App, () => {
-		hydrate(
-			<Provider store={store}>
-				<ConnectedRouter history={history}>
-					<App />
-				</ConnectedRouter>
-			</Provider>,
-			document.getElementById('root')
-		);
+	const renderApp = hydrate(
+		<Provider store={store}>
+			<ConnectedRouter history={history}>
+				<App />
+			</ConnectedRouter>
+		</Provider>,
+		root
+	);
+	const RedBox = require('redbox-react').default;
+	module.hot.accept(require('./containers/App').default, () => {
+		try {
+			renderApp();
+		}
+		catch(e) {
+			render(<RedBox error={e} />, root);
+		}
 	});
 }

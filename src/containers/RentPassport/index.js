@@ -24,7 +24,7 @@ const styles = theme => ({
 
 
 const reviewsCategories = () => (
-	<div className="flex-row">
+	<div className="flexRow">
 		<Typography variant="body2" className="pr-16 pl-16">Given (3)</Typography>
 		<Typography variant="body2">Received (2)</Typography>
 	</div>
@@ -32,7 +32,7 @@ const reviewsCategories = () => (
 
 
 const verifiedSign = () => (
-	<div className="flex-row align-center justify-center">
+	<div className="flexRow alignCenter justifyCenter">
 		<Typography variant="body2" className="pr-8 pl-8">Verified</Typography>
 		<img className="verifiedBadge" src={VerifiedBadge} alt="Verified Badge"/>
 	</div>

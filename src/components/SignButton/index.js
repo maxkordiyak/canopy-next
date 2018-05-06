@@ -28,7 +28,7 @@ const styles = theme => ({
 		backgroundColor: 'transparent',
 		borderColor: '#65B98E',
 		fontFamily: 'Montserrat-SemiBold',
-		margin: `${theme.spacing.unit * 2}px 0`
+		marginBottom: `${theme.spacing.unit * 2.5}px`
 	},
 	btnIcon: {
 		maxWidth: `${theme.spacing.unit * 4}px`,
@@ -49,6 +49,9 @@ const styles = theme => ({
 		color: '#65B98E',
 		position: 'absolute',
 		right: `${theme.spacing.unit * 2}px`
+	},
+	icon: {
+		fill: '#65B98E'
 	}
 });
 
@@ -58,7 +61,7 @@ function SignButton(props) {
 	return (
 		<div className={classes.root}>
 			<Button className={classes.signButton} variant="flat" color="inherit">
-				{type ? <span><img className={classes.btnIcon} src={Wrapper} alt={iconType}/></span> : <Wrapper/>}
+				{type ? <span><img className={classes.btnIcon} src={Wrapper} alt={iconType}/></span> : <Wrapper className={classes.icon}/>}
 				<Typography className={classes.btnText} variant="body2" paragraph={true} align={'center'}>
 					{text}
 				</Typography>

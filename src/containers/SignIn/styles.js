@@ -33,7 +33,7 @@ const styles = theme => ({
 		padding: '3em 2em',
 		[theme.breakpoints.up('md')]: {
 			width: '40%',
-			padding: '6em 4em'
+			padding: '5.5em 4em'
 		}
 	},
 	logoImage: {
@@ -70,7 +70,7 @@ const styles = theme => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'space-between',
+		justifyContent: 'space-around',
 		[theme.breakpoints.up('md')]: {
 			padding: `${theme.spacing.unit * 5}px`
 		},

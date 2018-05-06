@@ -2,8 +2,9 @@
 @import "mixins/mixins";
 // N.B. include breakpoints only with variables!
 @import "mixins/breakpoints";
-@import "mixins/flexbox";
-@import "mixins/utils";
+@import "mixins/paddings";
+// @import "mixins/flexbox";
+// @import "mixins/utils";
 @import "fonts/nexafont";
 @import "fonts/montserrat";
 
