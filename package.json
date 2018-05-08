@@ -34,6 +34,8 @@
     "recompose": "^0.27.0",
     "redbox-react": "^1.6.0",
     "redux": "^4.0.0",
+    "redux-form": "^7.3.0",
+    "redux-form-material-ui": "^5.0.0-beta.2",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

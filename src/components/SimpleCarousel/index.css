@@ -12,6 +12,14 @@
     background-color: #586881;
     border: 1px solid #586881; }
 
+.icon {
+  color: inherit;
+  margin-left: -4px;
+  width: 16px !important;
+  height: 16px !important;
+  font-size: 20px !important;
+  height: auto; }
+
 ._buttonBack_113ph_1 {
   color: inherit;
   font-weight: normal;

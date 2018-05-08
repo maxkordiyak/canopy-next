@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
+import { reducer as formReducer } from 'redux-form';
 import createBrowserHistory from 'history/createBrowserHistory';
 import createMemoryHistory from 'history/createMemoryHistory';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
@@ -24,6 +25,7 @@ const configureStore = initialState => {
 	const store = createStore(
 		combineReducers({
 			...rootReducer,
+			form: formReducer,
 			router: routerReducer
 		}),
 		initialState,

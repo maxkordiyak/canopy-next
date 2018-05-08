@@ -17,6 +17,15 @@
 	}
 }
 
+.icon {
+	color: inherit;
+	margin-left: -($regular-spacer * 0.5);
+	width: $large-spacer!important;
+	height: $large-spacer!important;
+  font-size: $regular-spacer*2.5!important;
+	height: auto;
+
+}
 ._buttonBack_113ph_1 {
 	@include prevButton();
 	&[disabled] {

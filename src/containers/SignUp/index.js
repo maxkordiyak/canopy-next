@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import SingUpImg from '../../assets/images/singup_pic.png';
 import LogoBig from '../../assets/images/LogoBig.png';
+import SignUpForm from '../../forms/SignUpForm';
 import styles from '../SignIn/styles';
 
 import theme from '../themeOverrides';
@@ -31,7 +32,9 @@ class SignUpContainer extends React.Component {
 							<Typography variant="title" paragraph={true} align={'center'}>
 								Sign Up
 							</Typography>
-							<div className={classes.formsWrapper}>FORMS</div>
+							<div className={classes.formsWrapper}>
+								<SignUpForm onSubmit={values => console.log(values)} />
+							</div>
 							<Typography variant="subheading" align={'center'}>
 								Already have an account? <Link to={'/signin'} className="textBold">Sign In</Link>
 							</Typography>
