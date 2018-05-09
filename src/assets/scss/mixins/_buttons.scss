@@ -1,28 +1,41 @@
 @mixin plainButton() {
 	color: inherit;
-	font-weight: normal;
 	font-family: inherit;
 	cursor: pointer;
 	background: none;
 	border: 0 none;
+	min-height: 30px;
+	position: relative;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.5em;
+
 }
 
 @mixin nextButton() {
 	@include plainButton();
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5em;
+	padding-right: 0.75em;
   &:after {
-	  content: '>';
+	  content: '\203A';
+	  position: absolute;
+	  display: block;
+	  font-size: 26px;
+	  top: 45%;
+	  right: 0;
+	  transform: translateY(-53%);
   }
 }
 
 @mixin prevButton() {
 	@include plainButton();
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5em;
+	padding-left: 0.75em;
 	&:before {
-		content: '<';
+		content: '\2039';
+		position: absolute;
+		display: block;
+		font-size: 26px;
+		top: 45%;
+		left: 0;
+		transform: translateY(-53%);
 	}
 }
