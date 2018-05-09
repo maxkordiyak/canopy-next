@@ -2,6 +2,17 @@
 // Flexbox SASS mixins
 // The spec: http://www.w3.org/TR/css3-flexbox
 // --------------------------------------------------
+@mixin flex-values($prop) {
+  $total: 20;
+  $percents: 10%;
+  @for $i from 1 through $total {
+    .flex-#{$i*5} {
+      box-sizing: border-box;
+      flex: 1 1 100%;
+      max-#{$prop}: #{$i*5%};
+    }
+  }
+}
 
 // Flexbox display
 @mixin flexbox() {
@@ -192,6 +203,10 @@
 
 .justifySpaceAround {
   @include justify-content(space-around);
+}
+
+.justifySpaceBetween {
+  @include justify-content(space-between);
 }
 
 .flexAuto {

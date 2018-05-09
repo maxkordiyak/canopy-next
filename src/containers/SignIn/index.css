@@ -253,6 +253,13 @@
   justify-content: space-around;
   -ms-flex-pack: space-around; }
 
+.justifySpaceBetween {
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between; }
+
 .flexAuto {
   -webkit-box-flex: 1 1 auto;
   -moz-box-flex: 1 1 auto;

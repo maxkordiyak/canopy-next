@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
+import {Link} from 'react-router-dom';
+import Button from 'material-ui/Button';
 import Radio from 'material-ui/Radio';
 import {InputLabel} from 'material-ui/Input';
 import {MenuItem} from 'material-ui/Menu';
@@ -14,7 +16,7 @@ import {
 } from 'redux-form-material-ui';
 import './index.css';
 
-export const fields = ['fullName', 'email', 'renterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
+export const fields = ['fullName', 'email', 'import {Link} from \'react-router-dom\';\nrenterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
 
 const validate = values => {
 	const errors = {};
@@ -75,7 +77,7 @@ class SignUpForm extends React.Component {
 	render() {
 		// console.log(this.props);
 		return (
-			<form onSubmit={this.props.handleSubmit} autoComplete="off">
+			<form onSubmit={this.props.handleSubmit} autoComplete="off" noValidate={true}>
 
 				<Field className="mb-16" fullWidth name="fullName" component={TextField} label="Full name"
 							 placeholder={'e.g. Alex Smith'}/>
@@ -97,17 +99,24 @@ class SignUpForm extends React.Component {
 						</Field>
 					</FormControl>
 				</div>
-
-				<FormControlLabel control={<Field name="agreeToTerms" component={Checkbox}/>} label="Agree to terms?"/>
-
-				<FormControlLabel control={<Field name="receiveEmails" component={Switch}/>} label="Please spam me!"/>
-
+				<div className="flexRow mt-16 mb-16 alignCenter justifySpaceBetween">
+					<FormControlLabel control={<Field name="agreeToTerms" color="primary" component={Checkbox}/>}
+						label="Remember me"/>
+					<Link to={'/forgot-password'}>Forgot password?</Link>
+				</div>
+				<FormControlLabel control={<Field name="receiveEmails" color="primary" component={Switch}/>}
+					label="Please spam me!"/>
+				<h4>Best JS library/framework?</h4>
 				<Field name="bestFramework" component={RadioGroup} value={this.state.value} onChange={() => this.handleChange}>
-					<FormControlLabel value="react" control={<Radio/>} label="React"/>
-					<FormControlLabel value="angular" control={<Radio/>} label="Angular"/>
-					<FormControlLabel value="ember" control={<Radio/>} label="Ember"/>
+					<FormControlLabel value="react" control={<Radio color="primary"/>} label="React"/>
+					<FormControlLabel value="angular" control={<Radio color="primary"/>} label="Angular"/>
+					<FormControlLabel value="ember" control={<Radio color="primary"/>} label="Ember"/>
 				</Field>
-				<button type="submit">Send</button>
+				<div className="flexRow mt-16 mb-16 alignCenter justifyCenter">
+					<Button type="submit" variant="flat" color="primary">
+						Sign in
+					</Button>
+				</div>
 			</form>
 		);
 	}

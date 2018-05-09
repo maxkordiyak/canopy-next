@@ -1,16 +1,4 @@
 /* MIXINS */
-@mixin flex-values($prop) {
-  $total: 20;
-  $percents: 10%;
-  @for $i from 1 through $total {
-    .flex-#{$i*5} {
-      box-sizing: border-box;
-      flex: 1 1 100%;
-      max-#{$prop}: #{$i*5%};
-    }
-  }
-}
-
 @mixin word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;

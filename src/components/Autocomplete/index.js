@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import {MenuItem} from 'material-ui/Menu';
@@ -84,7 +85,26 @@ const suggestions = [
 		]
 	}
 ];
-
+// Override input border
+const theme = createMuiTheme({
+	overrides: {
+		MuiInput: {
+			underline: {
+				'&:hover:not(.MuiInput-disabled):before': {
+					borderWidth: 1,
+					backgroundColor: '#F5F7F9'
+				},
+				'&:before': {
+					backgroundColor: '#FFFFFF',
+					height: 2
+				},
+				'&:after': {
+					backgroundColor: '#586881'
+				}
+			}
+		}
+	}
+});
 
 const styles = theme => ({
 	hide: {
@@ -96,9 +116,9 @@ const styles = theme => ({
 	inputWrapper: {
 		position: 'fixed',
 		display: 'block',
-		top:  theme.spacing.unit * 7,
-		left:  theme.spacing.unit * 7,
-		padding: `${theme.spacing.unit}px 0 ${theme.spacing.unit}px ${theme.spacing.unit*2}px`,
+		top: theme.spacing.unit * 7,
+		left: theme.spacing.unit * 7,
+		padding: `${theme.spacing.unit}px 0 ${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
 		backgroundColor: '#fff',
 		boxShadow: '0px 0px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 3px 5px 1px -3px rgba(0, 0, 0, 0.12)',
 		width: `calc(100% - ${theme.spacing.unit * 7}px)`,
@@ -115,8 +135,8 @@ const styles = theme => ({
 	suggestionsContainerOpen: {
 		position: 'fixed',
 		display: 'block',
-		top:  theme.spacing.unit * 13,
-		left:  theme.spacing.unit * 7,
+		top: theme.spacing.unit * 13,
+		left: theme.spacing.unit * 7,
 		width: `calc(100% - ${theme.spacing.unit * 7}px)`,
 		[theme.breakpoints.up('sm')]: {
 			position: 'absolute',
@@ -141,6 +161,9 @@ const styles = theme => ({
 		[theme.breakpoints.up('sm')]: {
 			width: theme.spacing.unit * 50,
 			fontSize: theme.typography.subheading.fontSize
+		},
+		'&:before': {
+			backgroundColor: 'red'
 		}
 	},
 	flexRow: {
@@ -246,7 +269,8 @@ class IntegrationAutosuggest extends React.Component {
 			classes: {
 				input: classes.searchInput
 			},
-			startAdornment: <div style={{display: 'flex'}} >{!showInput && <InputAdornment position="start"><Search/></InputAdornment>}</div>,
+			startAdornment: <div style={{display: 'flex'}}>{!showInput &&
+			<InputAdornment position="start"><Search/></InputAdornment>}</div>,
 			...other
 		};
 
@@ -256,7 +280,9 @@ class IntegrationAutosuggest extends React.Component {
 					<Search onClick={this.toggleInput}/>
 				</Hidden>
 				<div className={showInput ? classes.inputWrapper : classes.hide}>
-					<TextField InputProps={InputProps}/>
+					<MuiThemeProvider theme={theme}>
+						<TextField InputProps={InputProps}/>
+					</MuiThemeProvider>
 				</div>
 				{loading ? <CircularProgress size={24}/> : null}
 			</div>

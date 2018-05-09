@@ -2,16 +2,22 @@ import {createMuiTheme} from 'material-ui/styles/index';
 
 const theme = createMuiTheme({
 	palette: {
-		background: {default: '#FFF'},
+		background: {default: '#FFFFFF'},
+		text: {
+			primary: 'rgba(0, 0, 0, 0.87)',
+			secondary: 'rgba(0, 0, 0, 0.54)',
+			disabled: 'rgba(0, 0, 0, 0.38)',
+			hint: 'rgba(0, 0, 0, 0.38)'
+		},
 		primary: {
+			light: '#57CE92',
+			main: '#4AAB7A',
+			dark: '#307B6C'
+		},
+		secondary: {
 			light: '#C4CAD4',
 			main: '#F5F7F9',
 			dark: '#586881'
-		},
-		secondary: {
-			light: '#57ce92',
-			main: '#4AAB7A',
-			dark: '#307B6C'
 		}
 	},
 	typography: {
@@ -54,7 +60,7 @@ const theme = createMuiTheme({
 				height: 12,
 				top: 10,
 				right: 10,
-				border: '2px solid #FFF',
+				border: '2px solid #FFFFFF',
 				fontSize: 0
 			}
 		},
@@ -108,20 +114,19 @@ const theme = createMuiTheme({
 			checked: {}
 		},
 		MuiButton: {
-			flatSecondary: {
-				background: 'transparent',
+			flatPrimary: {
+				background: '#4AAB7A',
 				borderRadius: 3,
 				border: 0,
-				color: '#b5bec9',
-				transitionDuration: '0ms',
-				height: 28,
-				padding: '0 10px',
+				color: '#FFFFFF',
 				textTransform: 'none',
 				boxShadow: 'none',
+				minHeight: 40,
+				minWidth: 128,
 				'&:hover': {
 					borderWidth: 1,
-					backgroundColor: '#f6f9fc',
-					color: '#6b7c93'
+					backgroundColor: '#307B6C',
+					color: '#FFFFFF'
 				}
 			}
 		}
