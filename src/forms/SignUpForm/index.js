@@ -90,7 +90,7 @@ class SignUpForm extends React.Component {
 									 component={Select}>
 							{currencies.map(option => (
 								<MenuItem className="listItem" key={option.value}
-													value={option.value}>
+									value={option.value}>
 									{option.value}
 								</MenuItem>
 							))}
