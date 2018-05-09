@@ -34,8 +34,9 @@ class SignUpContainer extends React.Component {
 							</Typography>
 							<div className={classes.formsWrapper}>
 								<SignUpForm onSubmit={values => console.log(values)} data={{
-									username: 'Max',
-									currency: 'Renter',
+									firstName: 'Test',
+									lastName: 'User',
+									renterType: 'Renter',
 									agreeToTerms: true,
 									receiveEmails: true,
 									bestFramework: 'react'

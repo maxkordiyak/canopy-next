@@ -14,10 +14,26 @@ import {
 } from 'redux-form-material-ui';
 import './index.css';
 
-export const fields = ['username', 'currency', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
+export const fields = ['firstName', 'lastName', 'email',  'renterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
 
 const validate = values => {
-	const errors = {};
+	const errors = {}
+	const requiredFields = [
+		'firstName',
+		'lastName',
+		'email'
+	];
+	requiredFields.forEach(field => {
+		if (!values[field]) {
+			errors[field] = 'Required';
+		}
+	});
+	if (
+		values.email &&
+		!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+	) {
+		errors.email = 'Invalid email address';
+	}
 	return errors;
 };
 
@@ -40,7 +56,7 @@ const currencies = [
 class SignUpForm extends React.Component {
 	state = {
 		value: this.props.initialValues.bestFramework,
-		currency: 'EUR'
+		renterType: 'EUR'
 	};
 
 	handleChange = event => {
@@ -51,23 +67,25 @@ class SignUpForm extends React.Component {
 		let tag = [];
 		Object.values(ev).map(value => tag.push(value));
 		tag.splice(-1, 1);
-		const currency = tag.join('');
+		const renterType = tag.join('');
 		this.setState({
-			[name]: currency
+			[name]: renterType
 		});
 	};
 
 	render() {
 		// console.log(this.props);
 		return (
-			<form onSubmit={this.props.handleSubmit}>
+			<form onSubmit={this.props.handleSubmit} autoComplete="off">
 
-				<Field className="" fullWidth name="username" component={TextField} label="Username"/>
+				<Field className="mb-16" fullWidth name="firstName" component={TextField} label="First name"/>
+				<Field className="mb-16" fullWidth name="lastName" component={TextField} label="Last Name"/>
+				<Field className="mb-16" fullWidth name="email" component={TextField} label="Email"/>
 
 				<div className="flexColumn mt-16 mb-16">
 					<FormControl>
-						<InputLabel htmlFor="currency">Select </InputLabel>
-						<Field onChange={ev => this.handleSelectChange('currency', ev)} name="currency" value={this.state.currency}
+						<InputLabel htmlFor="renterType">Select </InputLabel>
+						<Field onChange={ev => this.handleSelectChange('renterType', ev)} name="renterType" value={this.state.renterType}
 									 component={Select}>
 							{currencies.map(option => (
 								<MenuItem className="listItem" key={option.value}
@@ -104,8 +122,9 @@ SignUpForm = reduxForm({
 export default connect((state, {data}) => {
 	return {
 		initialValues: {
-			username: data.username,
-			currency: data.currency,
+			firstName: data.firstName,
+			lastName: data.lastName,
+			renterType: data.renterType,
 			agreeToTerms: data.agreeToTerms,
 			receiveEmails: data.receiveEmails,
 			bestFramework: data.bestFramework
