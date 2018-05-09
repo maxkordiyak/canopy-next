@@ -12,7 +12,7 @@ import Test from '../Test';
 import AppToolbar from '../../components/AppToolbar';
 import Sidebar from '../../components/Sidebar';
 import {setMessage} from '../../actions/app';
-import './index.css';
+
 
 import theme from '../../themeOverrides';
 

@@ -41,7 +41,7 @@ class SignUpContainer extends React.Component {
 									bestFramework: 'react'
 								}}/>
 							</div>
-							<Typography variant="subheading" align={'center'}>
+							<Typography className="mt-16" variant="subheading" align={'center'}>
 								Already have an account? <Link to={'/signin'} className="textBold">Sign In</Link>
 							</Typography>
 						</Drawer>

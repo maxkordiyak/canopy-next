@@ -5,7 +5,7 @@ import SignIn from '../SignIn';
 import SignUp from '../SignUp';
 import Home from '../Home';
 import Test from '../Test';
-
+import './index.css';
 const App = () => (
 	<React.Fragment>
 		<CssBaseline/>

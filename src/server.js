@@ -10,16 +10,23 @@ import { renderToString } from 'react-dom/server';
 import configureStore from './store/configureStore';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+
 const scripts = Object.keys(assets).reduce((scripts, key) => {
 	return (
 		scripts + `<script src="${assets[key].js}" defer crossorigin></script>`
 	);
 }, '');
-const styles = Object.keys(assets).reduce((styles, key) => {
-	return (
-		`<link rel="stylesheet" href="${assets[key].css}" type="text/css" media="all">`
-	);
-}, '');
+console.log('assets', assets);
+let styles = '';
+if(process.env.NODE_ENV === 'production') {
+	styles = Object.keys(assets).reduce((styles, key) => {
+		return (
+			`<link rel="stylesheet" href="${assets[key].css}" type="text/css" media="all">`
+		);
+	}, '');
+}
+console.log('scripts', scripts);
+console.log('styles', styles);
 // Initialize `koa-router` and setup a route listening on `GET /*`
 // Logic has been splitted into two chained middleware functions
 // @see https://github.com/alexmingoia/koa-router#multiple-middleware

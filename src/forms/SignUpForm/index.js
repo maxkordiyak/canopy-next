@@ -14,7 +14,6 @@ import {
 	Select,
 	TextField
 } from 'redux-form-material-ui';
-import './index.css';
 
 export const fields = ['fullName', 'email', 'import {Link} from \'react-router-dom\';\nrenterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
 
