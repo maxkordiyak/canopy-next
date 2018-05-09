@@ -62,6 +62,9 @@ const theme = createMuiTheme({
 				right: 10,
 				border: '2px solid #FFFFFF',
 				fontSize: 0
+			},
+			colorSecondary: {
+				backgroundColor: 'red'
 			}
 		},
 		MuiPaper: {
