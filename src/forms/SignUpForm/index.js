@@ -14,13 +14,12 @@ import {
 } from 'redux-form-material-ui';
 import './index.css';
 
-export const fields = ['firstName', 'lastName', 'email',  'renterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
+export const fields = ['fullName', 'email', 'renterType', 'agreeToTerms', 'receiveEmails', 'bestFramework'];
 
 const validate = values => {
-	const errors = {}
+	const errors = {};
 	const requiredFields = [
-		'firstName',
-		'lastName',
+		'fullName',
 		'email'
 	];
 	requiredFields.forEach(field => {
@@ -78,18 +77,20 @@ class SignUpForm extends React.Component {
 		return (
 			<form onSubmit={this.props.handleSubmit} autoComplete="off">
 
-				<Field className="mb-16" fullWidth name="firstName" component={TextField} label="First name"/>
-				<Field className="mb-16" fullWidth name="lastName" component={TextField} label="Last Name"/>
-				<Field className="mb-16" fullWidth name="email" component={TextField} label="Email"/>
+				<Field className="mb-16" fullWidth name="fullName" component={TextField} label="Full name"
+							 placeholder={'e.g. Alex Smith'}/>
+				<Field className="mb-16" fullWidth name="email" component={TextField} label="Email"
+							 placeholder={'e.g. name@email.com'}/>
 
 				<div className="flexColumn mt-16 mb-16">
 					<FormControl>
 						<InputLabel htmlFor="renterType">Select </InputLabel>
-						<Field onChange={ev => this.handleSelectChange('renterType', ev)} name="renterType" value={this.state.renterType}
+						<Field onChange={ev => this.handleSelectChange('renterType', ev)} name="renterType"
+									 value={this.state.renterType}
 									 component={Select}>
 							{currencies.map(option => (
 								<MenuItem className="listItem" key={option.value}
-									value={option.value}>
+													value={option.value}>
 									{option.value}
 								</MenuItem>
 							))}
@@ -122,8 +123,7 @@ SignUpForm = reduxForm({
 export default connect((state, {data}) => {
 	return {
 		initialValues: {
-			firstName: data.firstName,
-			lastName: data.lastName,
+			fullName: data.fullName,
 			renterType: data.renterType,
 			agreeToTerms: data.agreeToTerms,
 			receiveEmails: data.receiveEmails,
