@@ -1,6 +1,6 @@
 // This file is shared across the demos.
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
 import Dashboard from '@material-ui/icons/Dashboard';
 import Home from '@material-ui/icons/Home';
@@ -9,10 +9,11 @@ import VpnKey from '@material-ui/icons/VpnKey';
 import Group from '@material-ui/icons/Group';
 import HelpOutline from '@material-ui/icons/HelpOutline';
 import Tooltip from 'material-ui/Tooltip';
+import './index.css';
 
 export const mailFolderListItems = (
-	<div>
-		<Link to='/home'>
+	<div className="sidebaMenu">
+		<NavLink exact to='/home'>
 			<ListItem button>
 				<Tooltip id="tooltip-bottom" title="Dashboard" placement="bottom">
 					<ListItemIcon>
@@ -21,8 +22,8 @@ export const mailFolderListItems = (
 				</Tooltip>
 				<ListItemText primary="Dashboard"/>
 			</ListItem>
-		</Link>
-		<Link to='/home/test'>
+		</NavLink>
+		<NavLink exact to='/home/test'>
 			<ListItem button>
 				<Tooltip id="tooltip-properties" title="Properties" placement="bottom">
 					<ListItemIcon>
@@ -31,7 +32,7 @@ export const mailFolderListItems = (
 				</Tooltip>
 				<ListItemText primary="Properties"/>
 			</ListItem>
-		</Link>
+		</NavLink>
 		<ListItem button>
 			<Tooltip id="tooltip-users" title="Addresses" placement="bottom">
 				<ListItemIcon>

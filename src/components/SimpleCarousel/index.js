@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import {CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup} from 'pure-react-carousel';
-import ChevronRight from '@material-ui/icons/ChevronRight';
 import './index.css';
 
 const styles = theme => ({
@@ -33,7 +32,7 @@ class SimpleCarousel extends React.Component {
 					{buttons && (
 						<div className="flexRow flexNoWrap alignCenter justifyCenter">
 							<ButtonBack>Back</ButtonBack>
-							<ButtonNext>Next</ButtonNext><ChevronRight className="icon"/>
+							<ButtonNext>Next</ButtonNext>
 						</div>
 					)}
 					{dots && <div className="flexRow flexNoWrap alignCenter justifyCenter pt-16"><DotGroup/></div>}

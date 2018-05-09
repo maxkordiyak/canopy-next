@@ -1,0 +1,18 @@
+@import "../../assets/scss/variables";
+
+.sidebaMenu a {
+	display: block;
+	position: relative;
+	&.active {
+		&:before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+      background-color: $green;
+		}
+	}
+}

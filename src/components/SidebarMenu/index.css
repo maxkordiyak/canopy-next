@@ -1,0 +1,12 @@
+.sidebaMenu a {
+  display: block;
+  position: relative; }
+  .sidebaMenu a.active:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #65B98E; }

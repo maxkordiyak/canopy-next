@@ -43,6 +43,7 @@ const styles = theme => ({
 			duration: theme.transitions.duration.enteringScreen
 		})
 	},
+
 	drawerPaperClose: {
 		overflowX: 'hidden',
 		transition: theme.transitions.create('width', {
@@ -73,7 +74,7 @@ const styles = theme => ({
 });
 
 class Sidebar extends React.Component {
-	
+
 	_handleSidebar = event => {
 		const { handleSidebar } = this.props;
 		handleSidebar(event);
