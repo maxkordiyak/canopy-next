@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {reduxForm, Field, Fields} from 'redux-form';
-// import MenuItem from 'material-ui/Menu';
+import {reduxForm, Field} from 'redux-form';
 import Radio from 'material-ui/Radio';
-import {FormControlLabel} from 'material-ui/Form';
+import {InputLabel} from 'material-ui/Input';
+import {MenuItem} from 'material-ui/Menu';
+import {FormControl, FormControlLabel} from 'material-ui/Form';
 import {
 	Checkbox,
 	Switch,
@@ -20,22 +21,19 @@ const validate = values => {
 	return errors;
 };
 
+
 const currencies = [
 	{
-		value: 'USD',
-		label: '$'
+		value: 'Renter',
+		label: 'renter'
 	},
 	{
-		value: 'EUR',
-		label: '€'
+		value: 'Agent',
+		label: 'agent'
 	},
 	{
-		value: 'BTC',
-		label: '฿'
-	},
-	{
-		value: 'JPY',
-		label: '¥'
+		value: 'Landlord',
+		label: 'landlord'
 	}
 ];
 
@@ -50,10 +48,10 @@ class SignUpForm extends React.Component {
 	};
 
 	handleSelectChange = (name, ev) => {
-		let tag = []
-		Object.values(ev).map(value => tag.push(value))
-		tag.splice(-1,1)
-		const currency = tag.join('')
+		let tag = [];
+		Object.values(ev).map(value => tag.push(value));
+		tag.splice(-1, 1);
+		const currency = tag.join('');
 		this.setState({
 			[name]: currency
 		});
@@ -63,17 +61,23 @@ class SignUpForm extends React.Component {
 		// console.log(this.props);
 		return (
 			<form onSubmit={this.props.handleSubmit}>
+
 				<Field className="" fullWidth name="username" component={TextField} label="Username"/>
 
-				<FormControlLabel value={this.state.currency} control={<Field fullWidth name="currency" component={Select}>
-					{currencies.map(option => (
-						<option key={option.value} value={option.value}>
-							{option.label}
-						</option>
-					))}
-				</Field>} onChange={ev => this.handleSelectChange('currency', ev)} label="Select">
-
-				</FormControlLabel>
+				<div className="flexColumn mt-16 mb-16">
+					<FormControl>
+						<InputLabel htmlFor="currency">Select </InputLabel>
+						<Field onChange={ev => this.handleSelectChange('currency', ev)} name="currency" value={this.state.currency}
+									 component={Select}>
+							{currencies.map(option => (
+								<MenuItem className="listItem" key={option.value}
+									value={option.value}>
+									{option.value}
+								</MenuItem>
+							))}
+						</Field>
+					</FormControl>
+				</div>
 
 				<FormControlLabel control={<Field name="agreeToTerms" component={Checkbox}/>} label="Agree to terms?"/>
 
@@ -97,14 +101,14 @@ SignUpForm = reduxForm({
 	validate
 })(SignUpForm);
 
-export default connect((state, {}) => {
+export default connect((state, {data}) => {
 	return {
 		initialValues: {
-			username: 'Max',
-			currency: 'Monthly',
-			agreeToTerms: true,
-			receiveEmails: true,
-			bestFramework: 'react'
+			username: data.username,
+			currency: data.currency,
+			agreeToTerms: data.agreeToTerms,
+			receiveEmails: data.receiveEmails,
+			bestFramework: data.bestFramework
 		}
 	};
 })(SignUpForm);

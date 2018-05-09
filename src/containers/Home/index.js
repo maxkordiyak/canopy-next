@@ -14,7 +14,7 @@ import Sidebar from '../../components/Sidebar';
 import {setMessage} from '../../actions/app';
 import './index.css';
 
-import theme from '../themeOverrides';
+import theme from '../../themeOverrides';
 
 const styles = theme => ({
 	root: {

@@ -10,7 +10,7 @@ import LogoBig from '../../assets/images/LogoBig.png';
 import SignUpForm from '../../forms/SignUpForm';
 import styles from '../SignIn/styles';
 
-import theme from '../themeOverrides';
+import theme from '../../themeOverrides';
 
 class SignUpContainer extends React.Component {
 	state = {};
@@ -33,7 +33,13 @@ class SignUpContainer extends React.Component {
 								Sign Up
 							</Typography>
 							<div className={classes.formsWrapper}>
-								<SignUpForm onSubmit={values => console.log(values)} />
+								<SignUpForm onSubmit={values => console.log(values)} data={{
+									username: 'Max',
+									currency: 'Renter',
+									agreeToTerms: true,
+									receiveEmails: true,
+									bestFramework: 'react'
+								}}/>
 							</div>
 							<Typography variant="subheading" align={'center'}>
 								Already have an account? <Link to={'/signin'} className="textBold">Sign In</Link>
@@ -42,7 +48,7 @@ class SignUpContainer extends React.Component {
 						<div className={classes.content}>
 							<Paper className={classes.contentPaper}>
 								<Typography variant="display1" align={'center'}>
-									Start building your <br /> TrustScore today
+									Start building your <br/> TrustScore today
 								</Typography>
 								<img className={classes.singUpImage} src={SingUpImg} alt={'Sing Up'}/>
 								<Typography variant="subheading" align={'center'}>

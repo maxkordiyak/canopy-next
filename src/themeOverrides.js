@@ -2,7 +2,12 @@ import {createMuiTheme} from 'material-ui/styles/index';
 
 const theme = createMuiTheme({
 	palette: {
-		background: {default: '#FFF'}
+		background: {default: '#FFF'},
+		secondary: {
+			light: '#57ce92',
+			main: '#4AAB7A',
+			dark: '#307B6C'
+		}
 	},
 	typography: {
 		fontFamily: 'inherit',
@@ -37,7 +42,7 @@ const theme = createMuiTheme({
 			color: 'inherit'
 		}
 	},
-	overrides:{
+	overrides: {
 		MuiBadge: {
 			badge: {
 				width: 12,
@@ -86,6 +91,15 @@ const theme = createMuiTheme({
 					backgroundColor: '#586881'
 				}
 			}
+		},
+		MuiCheckbox: {
+			root: {
+				color: '#586881',
+				'&$checked': {
+					color: '#586881'
+				}
+			},
+			checked: {}
 		},
 		MuiButton: {
 			flatSecondary: {
