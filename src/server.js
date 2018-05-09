@@ -15,6 +15,11 @@ const scripts = Object.keys(assets).reduce((scripts, key) => {
 		scripts + `<script src="${assets[key].js}" defer crossorigin></script>`
 	);
 }, '');
+const styles = Object.keys(assets).reduce((styles, key) => {
+	return (
+		`<link rel="stylesheet" href="${assets[key].css}" type="text/css" media="all">`
+	);
+}, '');
 // Initialize `koa-router` and setup a route listening on `GET /*`
 // Logic has been splitted into two chained middleware functions
 // @see https://github.com/alexmingoia/koa-router#multiple-middleware
@@ -45,6 +50,7 @@ router.get(
         <meta name="theme-color" content="rgb(90, 184, 142)">
 				<meta name="apple-itunes-app" content="app-id=1179786956">
 				<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+				${styles}
         ${scripts}
     </head>
     <body>

@@ -1,12 +1,9 @@
 @import "variables";
-@import "mixins/mixins";
-// N.B. include breakpoints only with variables!
-@import "mixins/breakpoints";
-@import "mixins/paddings";
-// @import "mixins/flexbox";
-// @import "mixins/utils";
 @import "fonts/nexafont";
 @import "fonts/montserrat";
+// N.B. include breakpoints only with variables!
+@import "mixins/breakpoints";
+@import "mixins/flexbox";
 
 body {
 	padding: 0;
@@ -31,7 +28,7 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-a, button {
+a, button, input, select, textarea {
 	&:focus {
 		outline: none;
 	}
@@ -39,4 +36,33 @@ a, button {
 
 .verifiedBadge {
 	max-width: $regular-spacer * 2;
+}
+
+
+.sidebaMenu a {
+	display: block;
+	position: relative;
+	&.active {
+		&:before {
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			background-color: $green;
+		}
+	}
+}
+
+.sliderImage {
+	width: 100%;
+	height: auto;
+}
+.slideWrapper {
+	height: 100%;
+	@extend .flexColumn;
+	@extend .alignCenter;
+	@extend .justifySpaceAround;
 }

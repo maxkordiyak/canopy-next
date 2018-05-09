@@ -15,7 +15,7 @@ import MailIcon from '@material-ui/icons/MailOutline';
 
 import styles from './styles';
 import theme from '../../themeOverrides';
-import './index.css';
+
 
 // SignIn Slides
 import slides from './slides';

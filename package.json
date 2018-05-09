@@ -10,7 +10,7 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "production": "npm-run-all build start:prod build-css"
+    "production": "npm-run-all build-css build start:prod "
   },
   "dependencies": {
     "autosuggest-highlight": "^3.1.1",

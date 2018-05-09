@@ -19,8 +19,9 @@ module.exports = {
 				// so we don't need to worry about including it twice.
 				require.resolve('razzle/polyfills'),
 				require.resolve('react'),
-				require.resolve('react-dom')
+				require.resolve('react-dom'),
 				// ... add any other vendor packages with require.resolve('xxx')
+				require.resolve('pure-react-carousel')
 			];
 			
 			config.optimization = {

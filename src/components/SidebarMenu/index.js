@@ -9,7 +9,6 @@ import VpnKey from '@material-ui/icons/VpnKey';
 import Group from '@material-ui/icons/Group';
 import HelpOutline from '@material-ui/icons/HelpOutline';
 import Tooltip from 'material-ui/Tooltip';
-import './index.css';
 
 export const mailFolderListItems = (
 	<div className="sidebaMenu">
